@@ -451,7 +451,7 @@
                 <span>Home</span>
             </a>
             <a href="/services" data-tooltip="Services" data-image="https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=300&h=120" data-description="Explore our comprehensive audit, tax, and consulting services tailored to your needs. From financial reporting and compliance to strategic business consulting, we offer solutions that ensure regulatory adherence, optimize financial performance, and support long-term success.">
-                <i class="fas fa-concierge-bell"></i>
+                <i class="fas fa-file-invoice-dollar"></i>
                 <span>Services</span>
             </a>
             <a href="/industries" data-tooltip="Industries" data-image="https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=300&h=120" data-description="Specialized expertise across diverse sectors to meet your unique challenges. Our industry-specific knowledge in healthcare, technology, manufacturing, and more ensures customized solutions that address your business’s specific needs and goals.">
