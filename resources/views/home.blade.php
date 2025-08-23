@@ -3,29 +3,32 @@
 @section('styles')
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Google Fonts: Lora & Roboto -->
-    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- Google Fonts: Inter & Lora -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:wght@500;600;700&display=swap" rel="stylesheet">
     <!-- Font Awesome Icons -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <!-- Slick Slider CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css">
     <!-- GSAP for Animations -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <style>
         :root {
-            --primary: #002b4a;
-            --secondary: #0080c0;
-            --accent: #00a3e0;
-            --light: #f7fbff;
-            --lighter: #eef4fc;
+            --primary: #00213f;
+            --secondary: #0090d4;
+            --accent: #00b4f2;
+            --light: #f8fcff;
+            --lighter: #e8f0fc;
             --white: #ffffff;
             --gray: #6c757d;
-            --shadow: rgba(0, 43, 74, 0.15);
-            --shadow-lg: rgba(0, 43, 74, 0.25);
+            --shadow: rgba(0, 33, 63, 0.15);
+            --shadow-lg: rgba(0, 33, 63, 0.25);
             --transition: all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
         }
 
         .rka-scope {
-            font-family: 'Roboto', sans-serif;
+            font-family: 'Inter', sans-serif;
             background: var(--light);
             color: var(--primary);
             line-height: 1.8;
@@ -35,10 +38,10 @@
             font-family: 'Lora', serif;
             font-weight: 700;
             color: var(--primary);
-            letter-spacing: 0.5px;
+            letter-spacing: 0.3px;
         }
 
-        .rka-scope .section-container {
+        .section-container {
             max-width: 1400px;
             margin: 0 auto;
             padding: 0 24px;
@@ -48,82 +51,85 @@
         .hero-section {
             position: relative;
             height: 90vh;
-            min-height: 500px;
+            min-height: 600px;
             overflow: hidden;
             background: var(--primary);
+            margin: 0;
+            padding: 0;
+            width: 100%;
         }
 
         .hero-slider {
-            position: relative;
             width: 100%;
             height: 100%;
         }
 
         .hero-slide {
-            position: absolute;
-            top: 0;
-            left: 0;
+            position: relative;
             width: 100%;
-            height: 100%;
+            height: 90vh;
             background-size: cover;
             background-position: center;
-            opacity: 0;
             display: flex;
             align-items: center;
             justify-content: center;
-            z-index: 1;
-        }
-
-        .hero-slide.active {
-            opacity: 1;
-            z-index: 2;
         }
 
         .hero-slide-1 {
-            background: linear-gradient(135deg, rgba(0, 43, 74, 0.9), rgba(0, 128, 192, 0.75)), url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=1920&h=1080') center/cover;
+            background: linear-gradient(135deg, rgba(0, 33, 63, 0.8), rgba(0, 144, 212, 0.7)), url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=1920&h=1080') center/cover;
         }
 
         .hero-slide-2 {
-            background: linear-gradient(135deg, rgba(0, 43, 74, 0.9), rgba(0, 128, 192, 0.75)), url('https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=1920&h=1080') center/cover;
+            background: linear-gradient(135deg, rgba(0, 33, 63, 0.8), rgba(0, 144, 212, 0.7)), url('https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=1920&h=1080') center/cover;
         }
 
         .hero-slide-3 {
-            background: linear-gradient(135deg, rgba(0, 43, 74, 0.9), rgba(0, 128, 192, 0.75)), url('https://images.unsplash.com/photo-1516321310769-65e85b8e6351?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=1920&h=1080') center/cover;
+            background: linear-gradient(135deg, rgba(0, 33, 63, 0.8), rgba(0, 144, 212, 0.7)), url('https://images.unsplash.com/photo-1516321310769-65e85b8e6351?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=1920&h=1080') center/cover;
         }
 
         .hero-content {
             text-align: center;
             max-width: 900px;
-            padding: 2rem;
+            width: 90%;
+            margin: auto;
+            padding: 2.5rem;
             color: var(--white);
-            z-index: 3;
+            background: rgba(0, 33, 63, 0.15);
+            backdrop-filter: blur(8px);
+            border-radius: 24px;
+            box-shadow: 0 10px 40px rgba(0, 33, 63, 0.2);
         }
 
         .hero-content h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1.25rem;
-            text-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
-            color: var(--white);
+            font-size: 4.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--white), var(--accent));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         .hero-content p {
-            font-size: 1.25rem;
+            font-size: 1.3rem;
             font-weight: 400;
-            margin-bottom: 2rem;
-            opacity: 0.95;
+            margin-bottom: 2.5rem;
+            opacity: 0.9;
         }
 
         .btn-primary-filled, .btn-primary-outline {
-            font-family: 'Roboto', sans-serif;
-            font-size: 1.1rem;
-            font-weight: 500;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
             padding: 0.8rem 2.5rem;
             border-radius: 50px;
             transition: var(--transition);
             text-decoration: none;
             display: inline-flex;
             align-items: center;
-            margin: 0 0.5rem;
+            margin: 0 0.8rem;
+            position: relative;
+            overflow: hidden;
         }
 
         .btn-primary-filled {
@@ -133,8 +139,9 @@
         }
 
         .btn-primary-filled:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(0, 128, 192, 0.3);
+            background: linear-gradient(90deg, var(--accent), var(--secondary));
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px rgba(0, 144, 212, 0.3);
         }
 
         .btn-primary-outline {
@@ -146,53 +153,59 @@
         .btn-primary-outline:hover {
             background: var(--white);
             color: var(--primary);
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px rgba(0, 33, 63, 0.2);
         }
 
         .btn-primary-filled i, .btn-primary-outline i {
-            margin-left: 6px;
+            margin-left: 8px;
             transition: transform 0.3s;
         }
 
         .btn-primary-filled:hover i, .btn-primary-outline:hover i {
-            transform: translateX(3px);
+            transform: translateX(4px);
         }
 
-        .hero-indicators {
+        /* Slick Slider Dots */
+        .slick-dots {
             position: absolute;
-            bottom: 30px;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
+            bottom: 40px;
+            display: flex !important;
             gap: 12px;
-            z-index: 4;
+            justify-content: center;
         }
 
-        .hero-indicator {
-            width: 10px;
-            height: 10px;
-            background: rgba(255, 255, 255, 0.6);
+        .slick-dots li button {
+            width: 12px;
+            height: 12px;
+            background: rgba(255, 255, 255, 0.6) !important;
             border-radius: 50%;
+            border: none;
             cursor: pointer;
             transition: var(--transition);
+            font-size: 0;
         }
 
-        .hero-indicator:hover {
-            background: rgba(255, 255, 255, 0.8);
-            transform: scale(1.15);
+        .slick-dots li button::before {
+            content: none !important;
         }
 
-        .hero-indicator.active {
-            background: var(--white);
-            transform: scale(1.3);
+        .slick-dots li button:hover {
+            background: rgba(255, 255, 255, 0.8) !important;
+            transform: scale(1.2);
+        }
+
+        .slick-dots li.slick-active button {
+            background: var(--accent) !important;
+            transform: scale(1.4);
         }
 
         /* Stats Section */
         .stats-section {
-            padding: 5rem 0;
-            background: linear-gradient(180deg, var(--lighter), var(--light));
+            padding: 6rem 0;
+            background: linear-gradient(180deg, var(--light), var(--lighter));
             position: relative;
+            overflow: hidden;
         }
 
         .stats-section::before {
@@ -202,99 +215,94 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
-            opacity: 0.5;
-            z-index: 0;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.2), transparent 70%);
+            opacity: 0.4;
         }
 
         .stats-section h2 {
-            font-size: 2.8rem;
+            font-size: 3rem;
             text-align: center;
-            margin-bottom: 3rem;
-            position: relative;
-            z-index: 1;
+            margin-bottom: 3.5rem;
         }
 
         .stat-item {
-            background: var(--white);
-            border-radius: 16px;
-            padding: 2rem;
-            box-shadow: 0 8px 25px var(--shadow);
+            background: linear-gradient(135deg, var(--white), var(--light));
+            border-radius: 20px;
+            padding: 2.5rem;
+            box-shadow: 0 10px 30px var(--shadow);
             transition: var(--transition);
             text-align: center;
-            position: relative;
-            z-index: 1;
         }
 
         .stat-item:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 35px var(--shadow-lg);
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px var(--shadow-lg);
         }
 
         .stat-number {
             font-family: 'Lora', serif;
-            font-size: 3rem;
+            font-size: 3.5rem;
             font-weight: 700;
             color: var(--secondary);
-            margin-bottom: 0.75rem;
+            margin-bottom: 1rem;
         }
 
         .stat-label {
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             color: var(--primary);
-            font-weight: 400;
+            font-weight: 500;
         }
 
         /* Services Section */
         .services-section {
-            padding: 5rem 0;
+            padding: 6rem 0;
             background: var(--light);
         }
 
         .services-section h2 {
-            font-size: 2.8rem;
+            font-size: 3rem;
             text-align: center;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.8rem;
         }
 
         .services-section .lead {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             color: var(--gray);
             max-width: 1000px;
-            margin: 0 auto 3rem;
+            margin: 0 auto 3.5rem;
             text-align: center;
         }
 
         .service-card {
-            background: var(--white);
-            border-radius: 16px;
-            padding: 2rem;
-            box-shadow: 0 8px 25px var(--shadow);
+            background: linear-gradient(135deg, var(--white), var(--light));
+            border-radius: 20px;
+            padding: 2.5rem;
+            box-shadow: 0 10px 30px var(--shadow);
             transition: var(--transition);
-            min-height: 280px;
+            min-height: 320px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
         }
 
         .service-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 35px var(--shadow-lg);
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px var(--shadow-lg);
         }
 
         .service-card h3 {
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
+            font-size: 2rem;
+            margin-bottom: 1.2rem;
         }
 
         .service-card p {
             color: var(--gray);
-            font-size: 1rem;
+            font-size: 1.1rem;
             flex-grow: 1;
         }
 
         .learn-more {
-            font-weight: 500;
+            font-weight: 600;
             color: var(--secondary);
             text-decoration: none;
             display: inline-flex;
@@ -304,42 +312,43 @@
 
         .learn-more:hover {
             color: var(--accent);
-            transform: translateX(6px);
+            transform: translateX(8px);
         }
 
         .learn-more i {
-            margin-left: 8px;
+            margin-left: 10px;
             transition: transform 0.3s;
         }
 
         .learn-more:hover i {
-            transform: translateX(4px);
+            transform: translateX(6px);
         }
 
         .btn-all {
             background: linear-gradient(90deg, var(--secondary), var(--accent));
             color: var(--white);
             border: none;
-            padding: 0.5rem 1.5rem;
-            font-size: 0.85rem;
-            font-weight: 500;
+            padding: 0.6rem 1.5rem;
+            font-size: 0.95rem;
+            font-weight: 600;
             border-radius: 50px;
-            margin: 3rem auto 0;
+            margin: 3.5rem auto 0;
             display: block;
             text-align: center;
             text-decoration: none;
             transition: var(--transition);
-            width: 200px;
+            width: 180px;
         }
 
         .btn-all:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 128, 192, 0.3);
+            background: linear-gradient(90deg, var(--accent), var(--secondary));
+            transform: translateY(-6px);
+            box-shadow: 0 12px 35px rgba(0, 144, 212, 0.3);
         }
 
         /* Why Choose Us */
         .why-choose-us {
-            padding: 5rem 0;
+            padding: 6rem 0;
             background: linear-gradient(180deg, var(--white), var(--lighter));
             position: relative;
         }
@@ -351,32 +360,27 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
-            opacity: 0.5;
-            z-index: 0;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.2), transparent 70%);
+            opacity: 0.4;
         }
 
         .why-choose-us h2 {
-            font-size: 2.8rem;
+            font-size: 3rem;
             text-align: center;
-            margin-bottom: 1.5rem;
-            position: relative;
-            z-index: 1;
+            margin-bottom: 1.8rem;
         }
 
         .why-choose-us .lead {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             color: var(--gray);
             max-width: 1000px;
-            margin: 0 auto 3rem;
+            margin: 0 auto 3.5rem;
             text-align: center;
-            position: relative;
-            z-index: 1;
         }
 
         .why-choose-us img {
-            border-radius: 16px;
-            box-shadow: 0 8px 25px var(--shadow);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px var(--shadow);
             object-fit: cover;
             width: 100%;
             max-height: 500px;
@@ -384,31 +388,29 @@
         }
 
         .why-choose-us img:hover {
-            transform: scale(1.03);
+            transform: scale(1.04);
         }
 
         .feature-item {
-            background: var(--white);
-            border-radius: 12px;
-            padding: 1.5rem;
-            box-shadow: 0 6px 20px var(--shadow);
+            background: linear-gradient(135deg, var(--white), var(--light));
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 8px 25px var(--shadow);
             display: flex;
             align-items: flex-start;
-            gap: 1.2rem;
+            gap: 1.5rem;
             transition: var(--transition);
-            margin-bottom: 1.5rem;
-            position: relative;
-            z-index: 1;
+            margin-bottom: 1.8rem;
         }
 
         .feature-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px var(--shadow-lg);
+            transform: translateY(-8px);
+            box-shadow: 0 12px 35px var(--shadow-lg);
         }
 
         .feature-icon {
-            width: 50px;
-            height: 50px;
+            width: 60px;
+            height: 60px;
             background: linear-gradient(135deg, var(--secondary), var(--accent));
             border-radius: 50%;
             display: flex;
@@ -419,81 +421,81 @@
         }
 
         .feature-icon:hover {
-            transform: scale(1.1);
+            transform: scale(1.15);
         }
 
         .feature-icon i {
             color: var(--white);
-            font-size: 1.5rem;
+            font-size: 1.8rem;
         }
 
         .feature-title {
-            font-size: 1.6rem;
-            margin-bottom: 0.5rem;
+            font-size: 1.8rem;
+            margin-bottom: 0.8rem;
         }
 
         .feature-description {
             color: var(--gray);
-            font-size: 1rem;
+            font-size: 1.1rem;
         }
 
         /* Industries Section */
         .industries-section {
-            padding: 5rem 0;
+            padding: 6rem 0;
             background: linear-gradient(180deg, var(--lighter), var(--white));
         }
 
         .industries-section h2 {
-            font-size: 2.8rem;
+            font-size: 3rem;
             text-align: center;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.8rem;
         }
 
         .industries-section .lead {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             color: var(--gray);
             max-width: 1000px;
-            margin: 0 auto 3rem;
+            margin: 0 auto 3.5rem;
             text-align: center;
         }
 
         .industry-item {
-            background: var(--white);
-            border-radius: 12px;
-            padding: 1.5rem;
-            box-shadow: 0 6px 20px var(--shadow);
+            background: linear-gradient(135deg, var(--white), var(--light));
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 8px 25px var(--shadow);
             text-align: center;
             transition: var(--transition);
         }
 
         .industry-item:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 10px 30px var(--shadow-lg);
+            transform: translateY(-8px);
+            box-shadow: 0 12px 35px var(--shadow-lg);
         }
 
         .industry-item i {
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             color: var(--secondary);
-            margin-bottom: 1rem;
+            margin-bottom: 1.2rem;
             transition: var(--transition);
         }
 
         .industry-item:hover i {
             color: var(--accent);
-            transform: scale(1.2);
+            transform: scale(1.25);
         }
 
         .industry-item p {
-            font-weight: 500;
+            font-weight: 600;
             color: var(--primary);
-            font-size: 1.1rem;
+            font-size: 1.2rem;
         }
 
         /* CTA Section */
         .cta-section {
             background: linear-gradient(135deg, var(--primary), var(--secondary));
             color: var(--white);
-            padding: 5rem 0;
+            padding: 6rem 0;
             text-align: center;
             position: relative;
         }
@@ -505,40 +507,33 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
-            opacity: 0.5;
-            z-index: 0;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.2), transparent 70%);
+            opacity: 0.4;
         }
 
         .cta-section h2 {
-            font-size: 2.8rem;
-            margin-bottom: 1.5rem;
-            position: relative;
-            z-index: 1;
+            font-size: 3rem;
+            margin-bottom: 1.8rem;
             color: var(--white);
         }
 
         .cta-section p {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             max-width: 900px;
-            margin: 0 auto 2.5rem;
-            opacity: 0.95;
-            position: relative;
-            z-index: 1;
+            margin: 0 auto 3rem;
+            opacity: 0.9;
         }
 
         .cta-buttons {
             display: flex;
             justify-content: center;
-            gap: 1.5rem;
+            gap: 2rem;
             flex-wrap: wrap;
-            position: relative;
-            z-index: 1;
         }
 
         /* Responsive */
         @media (min-width: 1400px) {
-            .rka-scope .section-container {
+            .section-container {
                 max-width: 1400px;
             }
         }
@@ -546,48 +541,103 @@
         @media (max-width: 992px) {
             .hero-section {
                 height: 80vh;
-                min-height: 450px;
+                min-height: 500px;
             }
             .hero-content h1 {
-                font-size: 3rem;
+                font-size: 3.5rem;
             }
             .hero-content p {
-                font-size: 1.1rem;
+                font-size: 1.2rem;
             }
             .stats-section h2, .services-section h2, .why-choose-us h2, .industries-section h2, .cta-section h2 {
-                font-size: 2.5rem;
+                font-size: 2.6rem;
             }
             .stat-number {
-                font-size: 2.8rem;
+                font-size: 3rem;
             }
             .service-card {
-                min-height: 300px;
+                min-height: 340px;
             }
             .why-choose-us img {
-                margin-bottom: 2rem;
+                margin-bottom: 2.5rem;
             }
         }
 
         @media (max-width: 768px) {
             .hero-section {
                 height: 70vh;
-                min-height: 400px;
+                min-height: 450px;
+            }
+            .hero-content {
+                padding: 2rem;
             }
             .hero-content h1 {
-                font-size: 2.5rem;
+                font-size: 2.8rem;
             }
             .hero-content p {
-                font-size: 1rem;
+                font-size: 1.1rem;
             }
             .btn-primary-filled, .btn-primary-outline {
                 padding: 0.7rem 2rem;
-                font-size: 1rem;
+                font-size: 0.95rem;
             }
             .stats-section, .services-section, .why-choose-us, .industries-section, .cta-section {
-                padding: 4rem 0;
+                padding: 4.5rem 0;
             }
             .stats-section h2, .services-section h2, .why-choose-us h2, .industries-section h2, .cta-section h2 {
+                font-size: 2.3rem;
+            }
+            .stat-number {
+                font-size: 2.8rem;
+            }
+            .stat-label, .industry-item p {
+                font-size: 1.1rem;
+            }
+            .service-card h3 {
+                font-size: 1.8rem;
+            }
+            .service-card p, .services-section .lead, .why-choose-us .lead, .industries-section .lead {
+                font-size: 1rem;
+            }
+            .feature-title {
+                font-size: 1.6rem;
+            }
+            .feature-description {
+                font-size: 1rem;
+            }
+            .btn-all {
+                width: 160px;
+                padding: 0.5rem 1.2rem;
+                font-size: 0.9rem;
+            }
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero-section {
+                height: 60vh;
+                min-height: 400px;
+            }
+            .hero-content {
+                padding: 1.5rem;
+            }
+            .hero-content h1 {
                 font-size: 2.2rem;
+            }
+            .hero-content p {
+                font-size: 0.95rem;
+            }
+            .btn-primary-filled, .btn-primary-outline {
+                padding: 0.6rem 1.8rem;
+                font-size: 0.9rem;
+                width: 100%;
+                max-width: 280px;
+            }
+            .stats-section h2, .services-section h2, .why-choose-us h2, .industries-section h2, .cta-section h2 {
+                font-size: 2rem;
             }
             .stat-number {
                 font-size: 2.5rem;
@@ -607,77 +657,22 @@
             .feature-description {
                 font-size: 0.95rem;
             }
-            .btn-all {
-                padding: 0.5rem 1.5rem;
-                font-size: 0.85rem;
-                width: 180px;
-            }
-            .cta-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-            .service-card {
-                min-height: 320px;
-            }
-        }
-
-        @media (max-width: 576px) {
-            .hero-section {
-                height: 60vh;
-                min-height: 350px;
-            }
-            .hero-content h1 {
-                font-size: 2rem;
-            }
-            .hero-content p {
-                font-size: 0.95rem;
-            }
-            .btn-primary-filled, .btn-primary-outline {
-                padding: 0.6rem 1.8rem;
-                font-size: 0.95rem;
-                width: 100%;
-                max-width: 280px;
-            }
-            .stats-section h2, .services-section h2, .why-choose-us h2, .industries-section h2, .cta-section h2 {
-                font-size: 1.9rem;
-            }
-            .stat-number {
-                font-size: 2.2rem;
-            }
-            .stat-label, .industry-item p {
-                font-size: 0.95rem;
-            }
-            .service-card h3 {
-                font-size: 1.5rem;
-            }
-            .service-card p, .services-section .lead, .why-choose-us .lead, .industries-section .lead {
-                font-size: 0.9rem;
-            }
-            .feature-title {
-                font-size: 1.4rem;
-            }
-            .feature-description {
-                font-size: 0.9rem;
-            }
             .feature-icon {
-                width: 45px;
-                height: 45px;
+                width: 50px;
+                height: 50px;
             }
             .feature-icon i {
-                font-size: 1.3rem;
+                font-size: 1.5rem;
             }
             .industry-item i {
-                font-size: 2.2rem;
+                font-size: 2.5rem;
             }
             .btn-all {
-                padding: 0.5rem 1.5rem;
+                width: 140px;
+                padding: 0.5rem 1rem;
                 font-size: 0.85rem;
-                width: 160px;
             }
-            .service-card {
-                min-height: auto;
-            }
-            .rka-scope .section-container {
+            .section-container {
                 padding: 0 16px;
             }
         }
@@ -685,12 +680,12 @@
 @endsection
 
 @section('content')
-    <div class="rka-scope">
-        <main>
+    <div class="rka-scope" style="margin: 0; padding: 0; overflow-x: hidden;">
+        <main style="margin: 0; padding: 0; width: 100vw;">
             <!-- Hero Section -->
             <section class="hero-section">
                 <div class="hero-slider">
-                    <div class="hero-slide hero-slide-1 active">
+                    <div class="hero-slide hero-slide-1">
                         <div class="hero-content gsap-animate">
                             <h1>Chartered Insights: Your Trusted Partner</h1>
                             <p>Premier chartered accountancy firm in Nepal, offering expert audit, tax, risk advisory, and consulting services for sustainable growth.</p>
@@ -720,11 +715,6 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="hero-indicators">
-                    <div class="hero-indicator active" data-slide="0"></div>
-                    <div class="hero-indicator" data-slide="1"></div>
-                    <div class="hero-indicator" data-slide="2"></div>
                 </div>
             </section>
 
@@ -908,95 +898,86 @@
         </main>
     </div>
 
+    <!-- jQuery (required for Slick Slider) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Slick Slider JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
     <script>
-        // GSAP Animations
+        // Initialize Slick Slider
+     $(document).ready(function(){
+    $('.hero-slider').slick({
+        dots: true,
+        infinite: true,
+        speed: 800,
+        fade: true,
+        cssEase: 'cubic-bezier(0.4, 0, 0.2, 1)',
+        autoplay: true,
+        autoplaySpeed: 5000,
+        arrows: false,
+        pauseOnHover: true,
+        pauseOnFocus: true
+    });
+
+
+            // Animate hero content on slide change
+            $('.hero-slider').on('beforeChange', function(event, slick, currentSlide, nextSlide){
+                const nextContent = $(slick.$slides[nextSlide]).find('.hero-content');
+                gsap.fromTo(nextContent, 
+                    { opacity: 0, y: 50 },
+                    { opacity: 1, y: 0, duration: 1.2, ease: 'power3.out' }
+                );
+            });
+        });
+            
+        window.addEventListener('load', function () {
         gsap.registerPlugin(ScrollTrigger);
 
-        // Hero Slider
-        const slides = document.querySelectorAll('.hero-slide');
-        const indicators = document.querySelectorAll('.hero-indicator');
-        let currentSlide = 0;
+        // --- Number counters ---
+        const nf = new Intl.NumberFormat(); // optional: adds 1,234 formatting
+        document.querySelectorAll('.stat-number').forEach((num) => {
+            const target = parseInt(num.getAttribute('data-target'), 10);
+            if (!Number.isFinite(target)) return;
 
-        function showSlide(index) {
-            slides.forEach((slide, i) => {
-                slide.classList.toggle('active', i === index);
-                if (i === index) {
-                    gsap.fromTo(slide.querySelector('.hero-content'), 
-                        { opacity: 0, y: 50 },
-                        { opacity: 1, y: 0, duration: 1.2, ease: 'power3.out' }
-                    );
-                }
-            });
-            indicators.forEach((dot, i) => {
-                dot.classList.toggle('active', i === index);
-            });
-        }
-
-        indicators.forEach((indicator, i) => {
-            indicator.addEventListener('click', () => {
-                currentSlide = i;
-                showSlide(currentSlide);
+            const obj = { val: 0 };
+            gsap.to(obj, {
+            val: target,
+            duration: 2,
+            ease: 'power2.out',
+            onUpdate: () => {
+                num.textContent = nf.format(Math.round(obj.val)) + '+';
+            },
+            scrollTrigger: {
+                trigger: num.closest('.stat-item') || num,
+                start: 'top 80%',
+                once: true,                 // animate only once
+                invalidateOnRefresh: true
+            }
             });
         });
 
-        setInterval(() => {
-            currentSlide = (currentSlide + 1) % slides.length;
-            showSlide(currentSlide);
-        }, 5000);
-
-        // Animate Stats
-        gsap.utils.toArray('.stat-number').forEach((num, i) => {
-            const target = num.getAttribute('data-target');
-            gsap.fromTo(num, 
-                { innerText: 0 },
-                {
-                    innerText: target,
-                    duration: 2.5,
-                    ease: 'power2.out',
-                    snap: { innerText: 1 },
-                    scrollTrigger: {
-                        trigger: num.parentElement,
-                        start: 'top 80%',
-                        toggleActions: 'play none none none'
-                    }
-                }
-            );
-        });
-
-        // General Animations
-        gsap.utils.toArray('.gsap-animate').forEach((el, i) => {
-            const delay = el.getAttribute('data-delay') || 0;
-            gsap.fromTo(el, 
-                { opacity: 0, y: 40 },
-                {
-                    opacity: 1,
-                    y: 0,
-                    duration: 1.2,
-                    delay: parseFloat(delay),
-                    ease: 'power3.out',
-                    scrollTrigger: {
-                        trigger: el,
-                        start: 'top 80%',
-                        toggleActions: 'play none none none'
-                    }
-                }
-            );
-        });
-
-        // Parallax-like effect for hero slides
-        gsap.utils.toArray('.hero-slide').forEach(slide => {
-            gsap.to(slide, {
-                backgroundPosition: '50% 60%',
-                ease: 'none',
+        // --- General reveal animations ---
+        gsap.utils.toArray('.gsap-animate').forEach((el) => {
+            const delay = parseFloat(el.getAttribute('data-delay')) || 0;
+            gsap.fromTo(el,
+            { opacity: 0, y: 40 },
+            {
+                opacity: 1, y: 0, duration: 1.2, delay,
+                ease: 'power3.out',
                 scrollTrigger: {
-                    trigger: slide,
-                    scrub: 1,
-                    start: 'top bottom',
-                    end: 'bottom top'
+                trigger: el,
+                start: 'top 85%',
+                once: true,
+                invalidateOnRefresh: true
                 }
-            });
+            }
+            );
         });
+
+        // Important: recalc positions after Slick/images affect layout
+        ScrollTrigger.refresh();
+        });
+      
     </script>
 @endsection
