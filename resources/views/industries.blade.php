@@ -98,6 +98,7 @@
             backdrop-filter: blur(8px);
             border-radius: 24px;
             box-shadow: 0 10px 40px rgba(0, 33, 63, 0.2);
+           
         }
 
         .hero-content h1 {

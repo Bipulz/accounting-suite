@@ -94,6 +94,7 @@
             background: rgba(0, 33, 63, 0.15);
             backdrop-filter: blur(8px);
             border-radius: 24px;
+             margin-right: 4.8rem;
             box-shadow: 0 10px 40px rgba(0, 33, 63, 0.2);
         }
 
@@ -199,6 +200,7 @@
         /* Services Section */
         .services-section {
             padding: 6rem 0;
+             margin-right: 4.8rem;
             background: var(--light);
         }
 

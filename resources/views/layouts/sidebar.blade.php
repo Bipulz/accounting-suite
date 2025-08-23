@@ -190,7 +190,7 @@
         .rka-sidebar-scope .sidebar {
             width: 80px;
             background: linear-gradient(180deg, #ffffff, #f0f6ff);
-            padding: 12px 0;
+            padding: 8px 0;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -205,7 +205,7 @@
 
         .rka-sidebar-scope .sidebar.active {
             transform: translateX(0);
-            width: 40%;
+            width:40%;
             max-width: 480px;
         }
 

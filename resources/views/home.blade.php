@@ -57,6 +57,7 @@
             margin: 0;
             padding: 0;
             width: 100%;
+            
         }
 
         .hero-slider {
@@ -91,6 +92,7 @@
             text-align: center;
             max-width: 900px;
             width: 90%;
+            margin-right: 4.8rem;
             margin: auto;
             padding: 2.5rem;
             color: var(--white);
@@ -206,6 +208,7 @@
             background: linear-gradient(180deg, var(--light), var(--lighter));
             position: relative;
             overflow: hidden;
+             margin-right: 4.9rem;
         }
 
         .stats-section::before {
@@ -256,6 +259,7 @@
         /* Services Section */
         .services-section {
             padding: 6rem 0;
+             margin-right: 4.8rem;
             background: var(--light);
         }
 
@@ -351,6 +355,7 @@
             padding: 6rem 0;
             background: linear-gradient(180deg, var(--white), var(--lighter));
             position: relative;
+             margin-right: 4.9rem;
         }
 
         .why-choose-us::before {
@@ -443,6 +448,7 @@
         .industries-section {
             padding: 6rem 0;
             background: linear-gradient(180deg, var(--lighter), var(--white));
+             margin-right: 4.9rem;
         }
 
         .industries-section h2 {
@@ -498,6 +504,7 @@
             padding: 6rem 0;
             text-align: center;
             position: relative;
+             margin-right: 4.9rem;
         }
 
         .cta-section::before {
