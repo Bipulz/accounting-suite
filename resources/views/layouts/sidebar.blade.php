@@ -205,7 +205,7 @@
 
         .rka-sidebar-scope .sidebar.active {
             transform: translateX(0);
-            width:40%;
+            width: 40%;
             max-width: 480px;
         }
 
@@ -253,6 +253,44 @@
             color: var(--accent);
         }
 
+        .rka-sidebar-scope .sidebar .separator-bar {
+            width: 100%;
+            height: 2px;
+            background: rgba(0, 43, 74, 0.3);
+            margin: 10px 0;
+        }
+
+        .rka-sidebar-scope .sidebar .text-item {
+            text-decoration: none;
+            color: var(--primary);
+            margin: 3px 0;
+            font-size: 10px;
+            width: 100%;
+            text-align: center;
+            padding: 4px 0;
+            transition: color 0.2s ease, transform 0.2s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            cursor: pointer;
+            font-weight: 500;
+            letter-spacing: 0.2px;
+        }
+
+        .rka-sidebar-scope .sidebar.active .text-item {
+            font-size: 13px;
+            padding: 4px 16px;
+            flex-direction: row;
+            justify-content: flex-start;
+            gap: 8px;
+        }
+
+        .rka-sidebar-scope .sidebar .text-item:hover {
+            color: var(--accent);
+            transform: scale(1.02);
+        }
+
         .rka-sidebar-scope .page-preview {
             position: fixed;
             top: 80px;
@@ -273,7 +311,7 @@
         }
 
         .rka-sidebar-scope .sidebar.active .page-preview {
-            left: 480px; /* Attached to the right of expanded sidebar */
+            left: 480px;
         }
 
         .rka-sidebar-scope .page-preview.active {
@@ -399,6 +437,14 @@
                 font-size: 14px;
                 margin-bottom: 2px;
             }
+            .rka-sidebar-scope .sidebar .separator-bar {
+                margin: 6px 0;
+            }
+            .rka-sidebar-scope .sidebar .text-item {
+                font-size: 9px;
+                padding: 2px 10px;
+                margin: 1px 0;
+            }
             .rka-content-scope {
                 padding: 16px;
             }
@@ -458,10 +504,6 @@
                 <i class="fas fa-industry"></i>
                 <span>Industries</span>
             </a>
-            <a href="/insights" data-tooltip="Insights" data-image="https://images.unsplash.com/photo-1516321310769-65e85b8e6351?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=300&h=120" data-description="Stay informed with our latest industry insights and thought leadership. Our expert analyses cover emerging trends, regulatory updates, and strategic opportunities to keep your business ahead in a dynamic market.">
-                <i class="fas fa-lightbulb"></i>
-                <span>Insights</span>
-            </a>
             <a href="/events" data-tooltip="Events" data-image="https://images.unsplash.com/photo-1516321310769-65e85b8e6351?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=300&h=120" data-description="Join our upcoming events to connect and learn from industry experts. Our workshops, webinars, and networking sessions provide valuable insights and opportunities to collaborate with peers and professionals.">
                 <i class="fas fa-calendar"></i>
                 <span>Events</span>
@@ -470,20 +512,23 @@
                 <i class="fas fa-building"></i>
                 <span>Offices</span>
             </a>
-            <a href="/careers" data-tooltip="Careers" data-image="https://images.unsplash.com/photo-1516321310769-65e85b8e6351?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=300&h=120" data-description="Explore career opportunities to grow with Chartered Insights. Join our dynamic team of professionals dedicated to excellence in audit, tax, and advisory services, and advance your career with meaningful opportunities.">
-                <i class="fas fa-briefcase"></i>
-                <span>Careers</span>
-            </a>
             <a href="/blogs" data-tooltip="Blogs" data-image="https://images.unsplash.com/photo-1516321310769-65e85b8e6351?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=300&h=120" data-description="Read our latest articles on finance, tax, and business trends. Our blog offers in-depth analyses, practical tips, and expert perspectives to help you navigate the complexities of the financial world.">
                 <i class="fas fa-blog"></i>
                 <span>Blogs</span>
             </a>
-            <a href="/about" data-tooltip="About" data-image="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=300&h=120" data-description="Learn about our mission, values, and commitment to excellence. At Chartered Insights, we strive to deliver unparalleled financial and consulting services, fostering trust and driving success for our clients.">
-                <i class="fas fa-info-circle"></i>
+            <a href="/insights" data-tooltip="Insights" data-image="https://images.unsplash.com/photo-1516321310769-65e85b8e6351?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=300&h=120" data-description="Stay informed with our latest industry insights and thought leadership. Our expert analyses cover emerging trends, regulatory updates, and strategic opportunities to keep your business ahead in a dynamic market.">
+                <i class="fas fa-lightbulb"></i>
+                <span>Insights</span>
+            </a>
+            <div class="separator-bar"></div>
+           
+            <a href="/about" class="text-item" data-tooltip="About" data-image="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=300&h=120" data-description="Learn about our mission, values, and commitment to excellence. At Chartered Insights, we strive to deliver unparalleled financial and consulting services, fostering trust and driving success for our clients.">
                 <span>About</span>
             </a>
-            <a href="/contact" data-tooltip="Contact Us" data-image="https://images.unsplash.com/photo-1516321310769-65e85b8e6351?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=300&h=120" data-description="Get in touch with our team for personalized support and inquiries. Whether you need assistance with audits, tax planning, or strategic consulting, our experts are here to help you succeed.">
-                <i class="fas fa-envelope"></i>
+            <a href="/careers" class="text-item" data-tooltip="Careers" data-image="https://images.unsplash.com/photo-1516321310769-65e85b8e6351?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=300&h=120" data-description="Explore career opportunities to grow with Chartered Insights. Join our dynamic team of professionals dedicated to excellence in audit, tax, and advisory services, and advance your career with meaningful opportunities.">
+                <span>Careers</span>
+            </a>
+            <a href="/contact" class="text-item" data-tooltip="Contact Us" data-image="https://images.unsplash.com/photo-1516321310769-65e85b8e6351?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=300&h=120" data-description="Get in touch with our team for personalized support and inquiries. Whether you need assistance with audits, tax planning, or strategic consulting, our experts are here to help you succeed.">
                 <span>Contact Us</span>
             </a>
         </div>
@@ -518,7 +563,6 @@
                 mainContent.classList.toggle('active', sidebar.classList.contains('active'));
             }
             gsap.to(sidebar, { x: sidebar.classList.contains('active') ? 0 : '-100%', duration: 0.2, ease: 'power3.out' });
-            // Adjust preview position based on sidebar state
             gsap.to(previewPanel, { 
                 left: sidebar.classList.contains('active') ? 480 : 80, 
                 duration: 0.2, 
@@ -531,7 +575,7 @@
         }
 
         function adjustPreviewPanel() {
-            const sidebarLinks = document.querySelectorAll('.rka-sidebar-scope .sidebar a');
+            const sidebarLinks = document.querySelectorAll('.rka-sidebar-scope .sidebar a, .rka-sidebar-scope .sidebar .text-item');
             const previewPanel = document.getElementById('page-preview');
             const previewTitle = document.getElementById('preview-title');
             const previewImage = document.getElementById('preview-image');
@@ -540,24 +584,19 @@
 
             sidebarLinks.forEach(link => {
                 link.addEventListener('mouseenter', () => {
-                    // Check if the link's href matches the current page
                     if (link.getAttribute('href') === currentPath) {
-                        return; // Skip showing preview for the current page
+                        return;
                     }
-
-                    // Update preview content
                     previewTitle.textContent = link.getAttribute('data-tooltip');
                     previewImage.src = link.getAttribute('data-image');
                     previewImage.alt = `${link.getAttribute('data-tooltip')} Preview`;
                     previewDescription.textContent = link.getAttribute('data-description');
-
-                    // Slide in from right
                     gsap.fromTo(previewPanel,
                         { opacity: 0, x: 20 },
                         { 
                             opacity: 1, 
                             x: 0, 
-                            duration: 0.6, // Slower animation
+                            duration: 0.6,
                             ease: 'power3.out',
                             visibility: 'visible',
                             onStart: () => previewPanel.classList.add('active')
@@ -566,11 +605,10 @@
                 });
 
                 link.addEventListener('mouseleave', () => {
-                    // Slide back to right
                     gsap.to(previewPanel, {
                         opacity: 0,
                         x: 20,
-                        duration: 0.6, // Slower animation
+                        duration: 0.6,
                         ease: 'power3.in',
                         visibility: 'hidden',
                         onComplete: () => previewPanel.classList.remove('active')

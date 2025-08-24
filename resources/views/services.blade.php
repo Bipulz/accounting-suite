@@ -88,7 +88,8 @@
             text-align: center;
             max-width: 900px;
             width: 90%;
-            margin-left: 5rem;
+            margin-left: 20rem;
+            margin-top:5rem;
             padding: 2.5rem;
             color: var(--white);
             background: rgba(0, 33, 63, 0.15);
@@ -506,7 +507,7 @@
             text-align: center;
             text-decoration: none;
             transition: var(--transition);
-            width: 180px;
+            width: 270px;
         }
 
         .btn-all:hover {

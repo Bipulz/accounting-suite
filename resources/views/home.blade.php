@@ -1,3 +1,4 @@
+
 @extends('layouts.sidebar')
 
 @section('styles')
@@ -32,6 +33,8 @@
             background: var(--light);
             color: var(--primary);
             line-height: 1.8;
+            overflow-x: hidden;
+            width: 100vw;
         }
 
         .rka-scope h1, .rka-scope h2, .rka-scope h3, .rka-scope h4, .rka-scope h5, .rka-scope h6 {
@@ -44,31 +47,30 @@
         .section-container {
             max-width: 1400px;
             margin: 0 auto;
-            padding: 0 24px;
+            padding: 0 1rem;
+            width: 100%;
         }
 
         /* Hero Section */
         .hero-section {
             position: relative;
-            height: 90vh;
-            min-height: 600px;
+            min-height: 95vh;
             overflow: hidden;
             background: var(--primary);
             margin: 0;
             padding: 0;
-            width: 100%;
-            
+            width: 100vw;
         }
 
         .hero-slider {
-            width: 100%;
+            width: 100vw;
             height: 100%;
         }
 
         .hero-slide {
             position: relative;
-            width: 100%;
-            height: 90vh;
+            width: 100vw;
+            min-height: 95vh;
             background-size: cover;
             background-position: center;
             display: flex;
@@ -90,11 +92,9 @@
 
         .hero-content {
             text-align: center;
-            max-width: 900px;
-            width: 90%;
-            margin-right: 4.8rem;
+            max-width: 90%;
             margin: auto;
-            padding: 2.5rem;
+            padding: 2rem;
             color: var(--white);
             background: rgba(0, 33, 63, 0.15);
             backdrop-filter: blur(8px);
@@ -103,8 +103,8 @@
         }
 
         .hero-content h1 {
-            font-size: 4.5rem;
-            margin-bottom: 1.5rem;
+            font-size: clamp(2rem, 6vw, 3.5rem);
+            margin-bottom: 1rem;
             font-weight: 800;
             background: linear-gradient(135deg, var(--white), var(--accent));
             -webkit-background-clip: text;
@@ -113,25 +113,23 @@
         }
 
         .hero-content p {
-            font-size: 1.3rem;
+            font-size: clamp(0.9rem, 3vw, 1.2rem);
             font-weight: 400;
-            margin-bottom: 2.5rem;
+            margin-bottom: 1.5rem;
             opacity: 0.9;
         }
 
         .btn-primary-filled, .btn-primary-outline {
             font-family: 'Inter', sans-serif;
-            font-size: 1rem;
+            font-size: clamp(0.8rem, 2.5vw, 0.95rem);
             font-weight: 600;
-            padding: 0.8rem 2.5rem;
+            padding: 0.75rem 1.5rem;
             border-radius: 50px;
             transition: var(--transition);
             text-decoration: none;
             display: inline-flex;
             align-items: center;
-            margin: 0 0.8rem;
-            position: relative;
-            overflow: hidden;
+            margin: 0.5rem;
         }
 
         .btn-primary-filled {
@@ -142,8 +140,8 @@
 
         .btn-primary-filled:hover {
             background: linear-gradient(90deg, var(--accent), var(--secondary));
-            transform: translateY(-4px);
-            box-shadow: 0 12px 30px rgba(0, 144, 212, 0.3);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 144, 212, 0.3);
         }
 
         .btn-primary-outline {
@@ -155,8 +153,8 @@
         .btn-primary-outline:hover {
             background: var(--white);
             color: var(--primary);
-            transform: translateY(-4px);
-            box-shadow: 0 12px 30px rgba(0, 33, 63, 0.2);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 33, 63, 0.2);
         }
 
         .btn-primary-filled i, .btn-primary-outline i {
@@ -204,11 +202,10 @@
 
         /* Stats Section */
         .stats-section {
-            padding: 6rem 0;
+            padding: 4rem 0;
             background: linear-gradient(180deg, var(--light), var(--lighter));
             position: relative;
-            overflow: hidden;
-             margin-right: 4.9rem;
+            width: 100vw;
         }
 
         .stats-section::before {
@@ -223,85 +220,85 @@
         }
 
         .stats-section h2 {
-            font-size: 3rem;
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
             text-align: center;
-            margin-bottom: 3.5rem;
+            margin-bottom: 2rem;
         }
 
         .stat-item {
             background: linear-gradient(135deg, var(--white), var(--light));
-            border-radius: 20px;
-            padding: 2.5rem;
-            box-shadow: 0 10px 30px var(--shadow);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            box-shadow: 0 8px 25px var(--shadow);
             transition: var(--transition);
             text-align: center;
         }
 
         .stat-item:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px var(--shadow-lg);
+            transform: translateY(-8px);
+            box-shadow: 0 12px 35px var(--shadow-lg);
         }
 
         .stat-number {
             font-family: 'Lora', serif;
-            font-size: 3.5rem;
+            font-size: clamp(2rem, 5vw, 3rem);
             font-weight: 700;
             color: var(--secondary);
-            margin-bottom: 1rem;
+            margin-bottom: 0.75rem;
         }
 
         .stat-label {
-            font-size: 1.2rem;
+            font-size: clamp(0.9rem, 2.5vw, 1.1rem);
             color: var(--primary);
             font-weight: 500;
         }
 
         /* Services Section */
         .services-section {
-            padding: 6rem 0;
-             margin-right: 4.8rem;
+            padding: 4rem 0;
             background: var(--light);
+            width: 100vw;
         }
 
         .services-section h2 {
-            font-size: 3rem;
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
             text-align: center;
-            margin-bottom: 1.8rem;
+            margin-bottom: 1.5rem;
         }
 
         .services-section .lead {
-            font-size: 1.3rem;
+            font-size: clamp(0.95rem, 2.5vw, 1.1rem);
             color: var(--gray);
             max-width: 1000px;
-            margin: 0 auto 3.5rem;
+            margin: 0 auto 2rem;
             text-align: center;
         }
 
         .service-card {
             background: linear-gradient(135deg, var(--white), var(--light));
-            border-radius: 20px;
-            padding: 2.5rem;
-            box-shadow: 0 10px 30px var(--shadow);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            box-shadow: 0 8px 25px var(--shadow);
             transition: var(--transition);
-            min-height: 320px;
+            min-height: 280px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
         }
 
         .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px var(--shadow-lg);
+            transform: translateY(-8px);
+            box-shadow: 0 12px 35px var(--shadow-lg);
         }
 
         .service-card h3 {
-            font-size: 2rem;
-            margin-bottom: 1.2rem;
+            font-size: clamp(1.5rem, 3vw, 1.8rem);
+            margin-bottom: 1rem;
         }
 
         .service-card p {
             color: var(--gray);
-            font-size: 1.1rem;
+            font-size: clamp(0.9rem, 2.5vw, 1rem);
             flex-grow: 1;
         }
 
@@ -316,46 +313,46 @@
 
         .learn-more:hover {
             color: var(--accent);
-            transform: translateX(8px);
+            transform: translateX(6px);
         }
 
         .learn-more i {
-            margin-left: 10px;
+            margin-left: 0.5rem;
             transition: transform 0.3s;
         }
 
         .learn-more:hover i {
-            transform: translateX(6px);
+            transform: translateX(4px);
         }
 
         .btn-all {
             background: linear-gradient(90deg, var(--secondary), var(--accent));
             color: var(--white);
             border: none;
-            padding: 0.6rem 1.5rem;
-            font-size: 0.95rem;
+            padding: 0.5rem 1.5rem;
+            font-size: clamp(0.85rem, 2.5vw, 0.9rem);
             font-weight: 600;
             border-radius: 50px;
-            margin: 3.5rem auto 0;
+            margin: 2rem auto 0;
             display: block;
             text-align: center;
             text-decoration: none;
             transition: var(--transition);
-            width: 180px;
+            width: clamp(140px, 20vw, 160px);
         }
 
         .btn-all:hover {
             background: linear-gradient(90deg, var(--accent), var(--secondary));
-            transform: translateY(-6px);
-            box-shadow: 0 12px 35px rgba(0, 144, 212, 0.3);
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px rgba(0, 144, 212, 0.3);
         }
 
         /* Why Choose Us */
         .why-choose-us {
-            padding: 6rem 0;
+            padding: 4rem 0;
             background: linear-gradient(180deg, var(--white), var(--lighter));
             position: relative;
-             margin-right: 4.9rem;
+            width: 100vw;
         }
 
         .why-choose-us::before {
@@ -370,52 +367,52 @@
         }
 
         .why-choose-us h2 {
-            font-size: 3rem;
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
             text-align: center;
-            margin-bottom: 1.8rem;
+            margin-bottom: 1.5rem;
         }
 
         .why-choose-us .lead {
-            font-size: 1.3rem;
+            font-size: clamp(0.95rem, 2.5vw, 1.1rem);
             color: var(--gray);
             max-width: 1000px;
-            margin: 0 auto 3.5rem;
+            margin: 0 auto 2rem;
             text-align: center;
         }
 
         .why-choose-us img {
-            border-radius: 20px;
-            box-shadow: 0 10px 30px var(--shadow);
+            border-radius: 1rem;
+            box-shadow: 0 8px 25px var(--shadow);
             object-fit: cover;
             width: 100%;
-            max-height: 500px;
+            max-height: 400px;
             transition: var(--transition);
         }
 
         .why-choose-us img:hover {
-            transform: scale(1.04);
+            transform: scale(1.03);
         }
 
         .feature-item {
             background: linear-gradient(135deg, var(--white), var(--light));
-            border-radius: 16px;
-            padding: 2rem;
+            border-radius: 1rem;
+            padding: 1.5rem;
             box-shadow: 0 8px 25px var(--shadow);
             display: flex;
             align-items: flex-start;
-            gap: 1.5rem;
+            gap: 1rem;
             transition: var(--transition);
-            margin-bottom: 1.8rem;
+            margin-bottom: 1.5rem;
         }
 
         .feature-item:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 35px var(--shadow-lg);
+            transform: translateY(-6px);
+            box-shadow: 0 10px 30px var(--shadow-lg);
         }
 
         .feature-icon {
-            width: 60px;
-            height: 60px;
+            width: 50px;
+            height: 50px;
             background: linear-gradient(135deg, var(--secondary), var(--accent));
             border-radius: 50%;
             display: flex;
@@ -426,85 +423,85 @@
         }
 
         .feature-icon:hover {
-            transform: scale(1.15);
+            transform: scale(1.1);
         }
 
         .feature-icon i {
             color: var(--white);
-            font-size: 1.8rem;
+            font-size: 1.5rem;
         }
 
         .feature-title {
-            font-size: 1.8rem;
-            margin-bottom: 0.8rem;
+            font-size: clamp(1.4rem, 2.5vw, 1.6rem);
+            margin-bottom: 0.5rem;
         }
 
         .feature-description {
             color: var(--gray);
-            font-size: 1.1rem;
+            font-size: clamp(0.9rem, 2.5vw, 1rem);
         }
 
         /* Industries Section */
         .industries-section {
-            padding: 6rem 0;
+            padding: 4rem 0;
             background: linear-gradient(180deg, var(--lighter), var(--white));
-             margin-right: 4.9rem;
+            width: 100vw;
         }
 
         .industries-section h2 {
-            font-size: 3rem;
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
             text-align: center;
-            margin-bottom: 1.8rem;
+            margin-bottom: 1.5rem;
         }
 
         .industries-section .lead {
-            font-size: 1.3rem;
+            font-size: clamp(0.95rem, 2.5vw, 1.1rem);
             color: var(--gray);
             max-width: 1000px;
-            margin: 0 auto 3.5rem;
+            margin: 0 auto 2rem;
             text-align: center;
         }
 
         .industry-item {
             background: linear-gradient(135deg, var(--white), var(--light));
-            border-radius: 16px;
-            padding: 2rem;
+            border-radius: 1rem;
+            padding: 1.5rem;
             box-shadow: 0 8px 25px var(--shadow);
             text-align: center;
             transition: var(--transition);
         }
 
         .industry-item:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 35px var(--shadow-lg);
+            transform: translateY(-6px);
+            box-shadow: 0 10px 30px var(--shadow-lg);
         }
 
         .industry-item i {
-            font-size: 2.8rem;
+            font-size: clamp(2rem, 5vw, 2.5rem);
             color: var(--secondary);
-            margin-bottom: 1.2rem;
+            margin-bottom: 1rem;
             transition: var(--transition);
         }
 
         .industry-item:hover i {
             color: var(--accent);
-            transform: scale(1.25);
+            transform: scale(1.2);
         }
 
         .industry-item p {
             font-weight: 600;
             color: var(--primary);
-            font-size: 1.2rem;
+            font-size: clamp(0.9rem, 2.5vw, 1.1rem);
         }
 
         /* CTA Section */
         .cta-section {
             background: linear-gradient(135deg, var(--primary), var(--secondary));
             color: var(--white);
-            padding: 6rem 0;
+            padding: 4rem 0;
             text-align: center;
             position: relative;
-             margin-right: 4.9rem;
+            width: 100vw;
         }
 
         .cta-section::before {
@@ -519,103 +516,105 @@
         }
 
         .cta-section h2 {
-            font-size: 3rem;
-            margin-bottom: 1.8rem;
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            margin-bottom: 1.5rem;
             color: var(--white);
         }
 
         .cta-section p {
-            font-size: 1.3rem;
-            max-width: 900px;
-            margin: 0 auto 3rem;
+            font-size: clamp(0.95rem, 2.5vw, 1.1rem);
+            max-width: 90%;
+            margin: 0 auto 2rem;
             opacity: 0.9;
         }
 
         .cta-buttons {
             display: flex;
             justify-content: center;
-            gap: 2rem;
+            gap: 1rem;
             flex-wrap: wrap;
         }
 
-        /* Responsive */
-        @media (min-width: 1400px) {
+        /* Responsive Design */
+        @media (min-width: 1200px) {
             .section-container {
                 max-width: 1400px;
+                padding: 0 1rem;
             }
         }
 
         @media (max-width: 992px) {
-            .hero-section {
-                height: 80vh;
-                min-height: 500px;
+            .hero-section, .hero-slide {
+                min-height: 80vh;
             }
             .hero-content h1 {
-                font-size: 3.5rem;
+                font-size: clamp(1.8rem, 5vw, 3rem);
             }
             .hero-content p {
-                font-size: 1.2rem;
+                font-size: clamp(0.85rem, 2.8vw, 1.1rem);
             }
             .stats-section h2, .services-section h2, .why-choose-us h2, .industries-section h2, .cta-section h2 {
-                font-size: 2.6rem;
+                font-size: clamp(1.6rem, 3.5vw, 2.3rem);
             }
             .stat-number {
-                font-size: 3rem;
+                font-size: clamp(1.8rem, 4.5vw, 2.8rem);
             }
             .service-card {
-                min-height: 340px;
+                min-height: 300px;
             }
             .why-choose-us img {
-                margin-bottom: 2.5rem;
+                margin-bottom: 1.5rem;
             }
         }
 
         @media (max-width: 768px) {
-            .hero-section {
-                height: 70vh;
-                min-height: 450px;
+            .hero-section, .hero-slide {
+                min-height: 70vh;
             }
             .hero-content {
-                padding: 2rem;
+                padding: 1.5rem;
+                max-width: 95%;
             }
             .hero-content h1 {
-                font-size: 2.8rem;
+                font-size: clamp(1.6rem, 4.5vw, 2.5rem);
             }
             .hero-content p {
-                font-size: 1.1rem;
+                font-size: clamp(0.8rem, 2.5vw, 1rem);
             }
             .btn-primary-filled, .btn-primary-outline {
-                padding: 0.7rem 2rem;
-                font-size: 0.95rem;
+                padding: 0.6rem 1.5rem;
+                font-size: clamp(0.75rem, 2.2vw, 0.9rem);
+                width: 100%;
+                max-width: 220px;
             }
             .stats-section, .services-section, .why-choose-us, .industries-section, .cta-section {
-                padding: 4.5rem 0;
+                padding: 3rem 0;
             }
             .stats-section h2, .services-section h2, .why-choose-us h2, .industries-section h2, .cta-section h2 {
-                font-size: 2.3rem;
+                font-size: clamp(1.5rem, 3.2vw, 2rem);
             }
             .stat-number {
-                font-size: 2.8rem;
+                font-size: clamp(1.6rem, 4vw, 2.5rem);
             }
             .stat-label, .industry-item p {
-                font-size: 1.1rem;
+                font-size: clamp(0.85rem, 2.2vw, 1rem);
             }
             .service-card h3 {
-                font-size: 1.8rem;
+                font-size: clamp(1.4rem, 2.8vw, 1.6rem);
             }
             .service-card p, .services-section .lead, .why-choose-us .lead, .industries-section .lead {
-                font-size: 1rem;
+                font-size: clamp(0.85rem, 2.2vw, 0.95rem);
             }
             .feature-title {
-                font-size: 1.6rem;
+                font-size: clamp(1.3rem, 2.3vw, 1.5rem);
             }
             .feature-description {
-                font-size: 1rem;
+                font-size: clamp(0.85rem, 2.2vw, 0.95rem);
             }
             .btn-all {
-                width: 160px;
-                padding: 0.5rem 1.2rem;
-                font-size: 0.9rem;
+                width: 140px;
+                padding: 0.5rem 1rem;
+                font-size: clamp(0.8rem, 2vw, 0.85rem);
             }
             .cta-buttons {
                 flex-direction: column;
@@ -624,71 +623,66 @@
         }
 
         @media (max-width: 576px) {
-            .hero-section {
-                height: 60vh;
-                min-height: 400px;
+            .hero-section, .hero-slide {
+                min-height: 60vh;
             }
             .hero-content {
-                padding: 1.5rem;
+                padding: 1rem;
+                max-width: 98%;
             }
             .hero-content h1 {
-                font-size: 2.2rem;
+                font-size: clamp(1.4rem, 4vw, 2.2rem);
             }
             .hero-content p {
-                font-size: 0.95rem;
-            }
-            .btn-primary-filled, .btn-primary-outline {
-                padding: 0.6rem 1.8rem;
-                font-size: 0.9rem;
-                width: 100%;
-                max-width: 280px;
-            }
-            .stats-section h2, .services-section h2, .why-choose-us h2, .industries-section h2, .cta-section h2 {
-                font-size: 2rem;
-            }
-            .stat-number {
-                font-size: 2.5rem;
-            }
-            .stat-label, .industry-item p {
-                font-size: 1rem;
-            }
-            .service-card h3 {
-                font-size: 1.6rem;
-            }
-            .service-card p, .services-section .lead, .why-choose-us .lead, .industries-section .lead {
-                font-size: 0.95rem;
-            }
-            .feature-title {
-                font-size: 1.5rem;
-            }
-            .feature-description {
-                font-size: 0.95rem;
-            }
-            .feature-icon {
-                width: 50px;
-                height: 50px;
-            }
-            .feature-icon i {
-                font-size: 1.5rem;
-            }
-            .industry-item i {
-                font-size: 2.5rem;
-            }
-            .btn-all {
-                width: 140px;
-                padding: 0.5rem 1rem;
-                font-size: 0.85rem;
+                font-size: clamp(0.75rem, 2.2vw, 0.9rem);
             }
             .section-container {
-                padding: 0 16px;
+                padding: 0 0.5rem;
+            }
+            .btn-primary-filled, .btn-primary-outline {
+                padding: 0.5rem 1.2rem;
+                max-width: 200px;
+            }
+            .feature-icon {
+                width: 40px;
+                height: 40px;
+            }
+            .feature-icon i {
+                font-size: 1.2rem;
+            }
+            .industry-item i {
+                font-size: clamp(1.8rem, 4vw, 2rem);
+            }
+        }
+
+        @media (max-width: 320px) {
+            .hero-section, .hero-slide {
+                min-height: 50vh;
+            }
+            .hero-content {
+                padding: 0.8rem;
+            }
+            .hero-content h1 {
+                font-size: clamp(1.2rem, 3.8vw, 1.8rem);
+            }
+            .hero-content p {
+                font-size: clamp(0.7rem, 2vw, 0.85rem);
+            }
+            .btn-primary-filled, .btn-primary-outline {
+                padding: 0.4rem 1rem;
+                font-size: clamp(0.7rem, 2vw, 0.85rem);
+                max-width: 180px;
+            }
+            .section-container {
+                padding: 0 0.3rem;
             }
         }
     </style>
 @endsection
 
 @section('content')
-    <div class="rka-scope" style="margin: 0; padding: 0; overflow-x: hidden;">
-        <main style="margin: 0; padding: 0; width: 100vw;">
+    <div class="rka-scope">
+        <main>
             <!-- Hero Section -->
             <section class="hero-section">
                 <div class="hero-slider">
@@ -912,23 +906,36 @@
     <!-- Slick Slider JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
     <script>
-        // Initialize Slick Slider
-     $(document).ready(function(){
-    $('.hero-slider').slick({
-        dots: true,
-        infinite: true,
-        speed: 800,
-        fade: true,
-        cssEase: 'cubic-bezier(0.4, 0, 0.2, 1)',
-        autoplay: true,
-        autoplaySpeed: 5000,
-        arrows: false,
-        pauseOnHover: true,
-        pauseOnFocus: true
-    });
+        $(document).ready(function(){
+            $('.hero-slider').slick({
+                dots: true,
+                infinite: true,
+                speed: 800,
+                fade: true,
+                cssEase: 'cubic-bezier(0.4, 0, 0.2, 1)',
+                autoplay: true,
+                autoplaySpeed: 5000,
+                arrows: false,
+                pauseOnHover: true,
+                pauseOnFocus: true,
+                responsive: [
+                    {
+                        breakpoint: 768,
+                        settings: {
+                            speed: 600,
+                            autoplaySpeed: 4000
+                        }
+                    },
+                    {
+                        breakpoint: 576,
+                        settings: {
+                            speed: 500,
+                            autoplaySpeed: 3500
+                        }
+                    }
+                ]
+            });
 
-
-            // Animate hero content on slide change
             $('.hero-slider').on('beforeChange', function(event, slick, currentSlide, nextSlide){
                 const nextContent = $(slick.$slides[nextSlide]).find('.hero-content');
                 gsap.fromTo(nextContent, 
@@ -937,54 +944,53 @@
                 );
             });
         });
-            
+
         window.addEventListener('load', function () {
-        gsap.registerPlugin(ScrollTrigger);
+            gsap.registerPlugin(ScrollTrigger);
 
-        // --- Number counters ---
-        const nf = new Intl.NumberFormat(); // optional: adds 1,234 formatting
-        document.querySelectorAll('.stat-number').forEach((num) => {
-            const target = parseInt(num.getAttribute('data-target'), 10);
-            if (!Number.isFinite(target)) return;
+            const nf = new Intl.NumberFormat();
+            document.querySelectorAll('.stat-number').forEach((num) => {
+                const target = parseInt(num.getAttribute('data-target'), 10);
+                if (!Number.isFinite(target)) return;
 
-            const obj = { val: 0 };
-            gsap.to(obj, {
-            val: target,
-            duration: 2,
-            ease: 'power2.out',
-            onUpdate: () => {
-                num.textContent = nf.format(Math.round(obj.val)) + '+';
-            },
-            scrollTrigger: {
-                trigger: num.closest('.stat-item') || num,
-                start: 'top 80%',
-                once: true,                 // animate only once
-                invalidateOnRefresh: true
-            }
+                const obj = { val: 0 };
+                gsap.to(obj, {
+                    val: target,
+                    duration: 2,
+                    ease: 'power2.out',
+                    onUpdate: () => {
+                        num.textContent = nf.format(Math.round(obj.val)) + '+';
+                    },
+                    scrollTrigger: {
+                        trigger: num.closest('.stat-item') || num,
+                        start: 'top 85%',
+                        once: true,
+                        invalidateOnRefresh: true
+                    }
+                });
             });
-        });
 
-        // --- General reveal animations ---
-        gsap.utils.toArray('.gsap-animate').forEach((el) => {
-            const delay = parseFloat(el.getAttribute('data-delay')) || 0;
-            gsap.fromTo(el,
-            { opacity: 0, y: 40 },
-            {
-                opacity: 1, y: 0, duration: 1.2, delay,
-                ease: 'power3.out',
-                scrollTrigger: {
-                trigger: el,
-                start: 'top 85%',
-                once: true,
-                invalidateOnRefresh: true
-                }
-            }
-            );
-        });
+            gsap.utils.toArray('.gsap-animate').forEach((el) => {
+                const delay = parseFloat(el.getAttribute('data-delay')) || 0;
+                gsap.fromTo(el,
+                    { opacity: 0, y: 40 },
+                    {
+                        opacity: 1,
+                        y: 0,
+                        duration: 1.2,
+                        delay,
+                        ease: 'power3.out',
+                        scrollTrigger: {
+                            trigger: el,
+                            start: 'top 85%',
+                            once: true,
+                            invalidateOnRefresh: true
+                        }
+                    }
+                );
+            });
 
-        // Important: recalc positions after Slick/images affect layout
-        ScrollTrigger.refresh();
+            ScrollTrigger.refresh();
         });
-      
     </script>
 @endsection
