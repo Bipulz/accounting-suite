@@ -88,13 +88,13 @@
             text-align: center;
             max-width: 900px;
             width: 90%;
-            margin: auto;
+            margin-left: 5rem;
             padding: 2.5rem;
             color: var(--white);
             background: rgba(0, 33, 63, 0.15);
             backdrop-filter: blur(8px);
             border-radius: 24px;
-             margin-right: 4.8rem;
+            
             box-shadow: 0 10px 40px rgba(0, 33, 63, 0.2);
         }
 

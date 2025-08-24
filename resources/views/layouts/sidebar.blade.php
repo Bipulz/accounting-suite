@@ -256,7 +256,7 @@
         .rka-sidebar-scope .page-preview {
             position: fixed;
             top: 80px;
-            left: 80px; /* Attached to the right of collapsed sidebar */
+            left: 80px;
             width: 50vw;
             max-width: 600px;
             height: 75vh;
