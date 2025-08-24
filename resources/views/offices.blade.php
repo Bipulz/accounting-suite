@@ -153,6 +153,7 @@
         .locations-section, .access-section, .services-section {
             padding: 5rem 0;
             background: var(--white);
+             padding-right: 5rem;
         }
 
         .locations-section h2, .access-section h2, .services-section h2 {
@@ -277,6 +278,7 @@
             padding: 2rem;
             text-align: center;
             transition: var(--transition);
+             padding-right: 5rem;
         }
 
         .services-section .service-card:hover {

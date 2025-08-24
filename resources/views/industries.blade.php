@@ -86,18 +86,20 @@
             background: linear-gradient(135deg, rgba(0, 33, 63, 0.8), rgba(0, 144, 212, 0.7)), url('https://images.unsplash.com/photo-1516321310769-65e85b8e6351?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=1920&h=1080') center/cover;
         }
 
-        .hero-content {
-            text-align: center;
-            max-width: 900px;
-            width: 90%;
-            margin: auto;
-            padding: 2.5rem;
-            color: var(--white);
-            background: rgba(0, 33, 63, 0.15);
-            backdrop-filter: blur(8px);
-            border-radius: 24px;
-            box-shadow: 0 10px 40px rgba(0, 33, 63, 0.2);
-           
+       .hero-content {
+               position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    max-width: 90%;
+    padding: 2rem;
+    color: var(--white);
+    background: rgba(0, 33, 63, 0.15);
+    backdrop-filter: blur(8px);
+    border-radius: 24px;
+    box-shadow: 0 10px 40px rgba(0, 33, 63, 0.2);
+
         }
 
         .hero-content h1 {

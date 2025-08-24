@@ -56,8 +56,8 @@
             position: relative;
             min-height: 95vh;
             overflow: hidden;
-            background: var(--primary);
-            margin: 0;
+            background: none;
+            margin-top:0rem;
             padding: 0;
             width: 100vw;
         }
@@ -91,15 +91,19 @@
         }
 
         .hero-content {
-            text-align: center;
-            max-width: 90%;
-            margin: auto;
-            padding: 2rem;
-            color: var(--white);
-            background: rgba(0, 33, 63, 0.15);
-            backdrop-filter: blur(8px);
-            border-radius: 24px;
-            box-shadow: 0 10px 40px rgba(0, 33, 63, 0.2);
+               position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    max-width: 90%;
+    padding: 2rem;
+    color: var(--white);
+    background: rgba(0, 33, 63, 0.15);
+    backdrop-filter: blur(8px);
+    border-radius: 24px;
+    box-shadow: 0 10px 40px rgba(0, 33, 63, 0.2);
+
         }
 
         .hero-content h1 {
@@ -206,6 +210,7 @@
             background: linear-gradient(180deg, var(--light), var(--lighter));
             position: relative;
             width: 100vw;
+            padding-right: 5rem;
         }
 
         .stats-section::before {
@@ -258,6 +263,7 @@
             padding: 4rem 0;
             background: var(--light);
             width: 100vw;
+             padding-right: 5rem;
         }
 
         .services-section h2 {
@@ -338,7 +344,7 @@
             text-align: center;
             text-decoration: none;
             transition: var(--transition);
-            width: clamp(140px, 20vw, 160px);
+            width: clamp(190px, 20vw, 160px);
         }
 
         .btn-all:hover {
@@ -353,6 +359,7 @@
             background: linear-gradient(180deg, var(--white), var(--lighter));
             position: relative;
             width: 100vw;
+             padding-right: 5rem;
         }
 
         .why-choose-us::before {
@@ -446,6 +453,7 @@
             padding: 4rem 0;
             background: linear-gradient(180deg, var(--lighter), var(--white));
             width: 100vw;
+             padding-right: 5rem;
         }
 
         .industries-section h2 {

@@ -104,6 +104,7 @@
         .blog-articles-section, .contribute-section {
             padding: 5rem 0;
             background: var(--white);
+             padding-right: 5rem;
         }
 
         .blog-articles-section h2, .contribute-section h2 {

@@ -66,19 +66,21 @@
             50% { opacity: 0.3; }
         }
 
-        .hero-content {
-            text-align: center;
-            max-width: 900px;
-            width: 90%;
-            margin: auto;
-            padding: 3rem;
-            color: var(--white);
-            background: rgba(0, 33, 63, 0.25);
-            backdrop-filter: blur(12px);
-            border-radius: 24px;
-            box-shadow: 0 10px 50px rgba(0, 33, 63, 0.3);
-        }
+       .hero-content {
+               position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    max-width: 90%;
+    padding: 2rem;
+    color: var(--white);
+    background: rgba(0, 33, 63, 0.15);
+    backdrop-filter: blur(8px);
+    border-radius: 24px;
+    box-shadow: 0 10px 40px rgba(0, 33, 63, 0.2);
 
+        }
         .hero-content h1 {
             font-size: 4.5rem;
             margin-bottom: 1.2rem;
