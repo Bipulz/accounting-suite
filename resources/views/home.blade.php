@@ -215,6 +215,7 @@
                     <a href="#" class="btn-all gsap-animate">View All Industries</a>
                 </div>
             </section>
+            @include('layouts.contactusform')
 
             <!-- Call to Action -->
             <section class="cta-section">

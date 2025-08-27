@@ -1,7 +1,6 @@
 @extends('layouts.sidebar')
 
 @section('styles')
-    
     @include('layouts.links')
     <link rel="stylesheet" href="{{ asset('css/insights.css') }}">
 @endsection
@@ -165,99 +164,33 @@
                     </div>
                 </div>
             </section>
-
-            <!-- Article Overlay -->
-            <div class="article-overlay">
-                <div class="article-overlay-content">
-                    <button class="article-overlay-close"><i class="fas fa-times"></i></button>
-                    <span class="category"></span>
-                    <h3></h3>
-                    <p class="lead"></p>
-                    <div class="meta"></div>
-                    <div class="content"></div>
-                    <div class="tags">
-                        <strong>Related Tags</strong><br>
-                    </div>
-                    <div class="share">
-                        <a href="#" class="btn-share">Share this insight <i class="fas fa-share-alt"></i></a>
-                    </div>
-                    <a href="#articles" class="back-link">Back to Insights</a>
-                    <div class="toc">
-                        <h4>Table of Contents</h4>
-                        <p>No headings found</p>
-                    </div>
-                </div>
-            </div>
         </main>
     </div>
+    @include('layouts.contactusform')
 @endsection
 
 @section('scripts')
-
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <!-- GSAP and ScrollTrigger -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script>
-        // Article Overlay Logic
+        // Article Redirect Logic
         document.addEventListener('DOMContentLoaded', function() {
             document.querySelectorAll('.recent-articles-section .article-card').forEach(card => {
                 card.addEventListener('click', function() {
-                    const category = this.dataset.category;
-                    const title = this.dataset.title;
-                    const description = this.dataset.description;
-                    const author = this.dataset.author;
-                    const date = this.dataset.date;
-                    const readTime = this.dataset.readTime;
-                    const content = this.dataset.content;
-                    const tags = this.dataset.tags.split(',');
+                    const category = encodeURIComponent(this.dataset.category);
+                    const title = encodeURIComponent(this.dataset.title);
+                    const description = encodeURIComponent(this.dataset.description);
+                    const author = encodeURIComponent(this.dataset.author);
+                    const date = encodeURIComponent(this.dataset.date);
+                    const readTime = encodeURIComponent(this.dataset.readTime);
+                    const content = encodeURIComponent(this.dataset.content);
+                    const tags = encodeURIComponent(this.dataset.tags);
 
-                    const overlay = document.querySelector('.article-overlay');
-                    overlay.querySelector('.category').textContent = category;
-                    overlay.querySelector('h3').textContent = title;
-                    overlay.querySelector('.lead').textContent = description;
-                    overlay.querySelector('.meta').textContent = `${author} • ${date} • ${readTime}`;
-                    overlay.querySelector('.content').textContent = content;
-                    overlay.querySelector('.tags').innerHTML = '<strong>Related Tags</strong><br>';
-                    tags.forEach(tag => {
-                        const tagLink = document.createElement('a');
-                        tagLink.href = '#';
-                        tagLink.className = 'tag';
-                        tagLink.textContent = tag;
-                        overlay.querySelector('.tags').appendChild(tagLink);
-                    });
-
-                    overlay.classList.add('active');
-                    gsap.fromTo('.article-overlay-content', 
-                        { opacity: 0, y: 50 },
-                        { opacity: 1, y: 0, duration: 0.5, ease: 'power3.out' }
-                    );
-                });
-            });
-
-            document.querySelectorAll('.article-overlay, .article-overlay-close, .fa-times').forEach(element => {
-                element.addEventListener('click', function(e) {
-                    if (e.target.classList.contains('article-overlay') || 
-                        e.target.classList.contains('article-overlay-close') || 
-                        e.target.classList.contains('fa-times')) {
-                        const overlay = document.querySelector('.article-overlay');
-                        gsap.to('.article-overlay-content', {
-                            opacity: 0,
-                            y: 50,
-                            duration: 0.5,
-                            ease: 'power3.in',
-                            onComplete: () => {
-                                overlay.classList.remove('active');
-                                overlay.querySelector('.category').textContent = '';
-                                overlay.querySelector('h3').textContent = '';
-                                overlay.querySelector('.lead').textContent = '';
-                                overlay.querySelector('.meta').textContent = '';
-                                overlay.querySelector('.content').textContent = '';
-                                overlay.querySelector('.tags').innerHTML = '<strong>Related Tags</strong><br>';
-                            }
-                        });
-                    }
+                    // Redirect to article page with query parameters
+                    window.location.href = `/article?category=${category}&title=${title}&description=${description}&author=${author}&date=${date}&readTime=${readTime}&content=${content}&tags=${tags}`;
                 });
             });
 

@@ -173,6 +173,7 @@
                     </div>
                 </div>
             </section>
+            @include('layouts.contactusform')
 
             <!-- CTA Section -->
             <section class="cta-section">

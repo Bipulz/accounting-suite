@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Enhanced Footer</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -29,7 +29,7 @@
 
         .rka-footer-scope .footer {
             background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 50%, #334155 100%);
-            padding: 5rem 0 3rem;
+            padding: clamp(2rem, 5vw, 4rem) 0 clamp(1.5rem, 4vw, 3rem);
             position: relative;
             width: 100%;
             z-index: 10;
@@ -71,7 +71,7 @@
         .rka-footer-scope .section-container {
             max-width: 1400px;
             margin: 0 auto;
-            padding: 0 2rem;
+            padding: 0 clamp(1rem, 4vw, 2rem);
             position: relative;
             z-index: 1;
         }
@@ -79,7 +79,7 @@
         .rka-footer-scope .footer h3 {
             font-family: 'Lora', serif;
             font-weight: 700;
-            font-size: 1.5rem;
+            font-size: clamp(1.2rem, 3vw, 1.5rem);
             color: var(--white);
             margin-bottom: 1.5rem;
             position: relative;
@@ -101,7 +101,7 @@
 
         .rka-footer-scope .footer p, 
         .rka-footer-scope .footer a {
-            font-size: 0.9rem;
+            font-size: clamp(0.8rem, 2.5vw, 0.9rem);
             color: var(--gray);
             line-height: 1.7;
             transition: var(--transition);
@@ -156,25 +156,28 @@
 
         .rka-footer-scope .social-icons {
             display: flex;
-            gap: 1rem;
+            gap: clamp(0.5rem, 2vw, 1rem);
             margin-top: 2rem;
+            flex-wrap: wrap;
+            justify-content: flex-start;
         }
 
         .rka-footer-scope .social-icons a {
-            font-size: 1.1rem;
+            font-size: clamp(0.9rem, 2.5vw, 1.1rem);
             color: var(--gray);
             transition: var(--transition);
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            width: 52px;
-            height: 52px;
+            width: clamp(40px, 10vw, 52px);
+            height: clamp(40px, 10vw, 52px);
             border-radius: 12px;
             background: rgba(255, 255, 255, 0.05);
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.1);
             position: relative;
             overflow: hidden;
+            touch-action: manipulation;
         }
 
         .rka-footer-scope .social-icons a::before {
@@ -207,7 +210,7 @@
 
         .rka-footer-scope .newsletter p {
             margin-bottom: 1.5rem;
-            font-size: 0.95rem;
+            font-size: clamp(0.85rem, 2.5vw, 0.95rem);
         }
 
         .rka-footer-scope .newsletter form {
@@ -229,12 +232,12 @@
         }
 
         .rka-footer-scope .newsletter input {
-            padding: 1.25rem 1.5rem;
+            padding: clamp(0.75rem, 3vw, 1.25rem) clamp(1rem, 3vw, 1.5rem);
             border: none;
             background: transparent;
             color: var(--white);
-            font-size: 0.9rem;
-            width: 70%;
+            font-size: clamp(0.8rem, 2.5vw, 0.9rem);
+            width: 100%;
             outline: none;
             font-weight: 400;
         }
@@ -245,17 +248,18 @@
         }
 
         .rka-footer-scope .newsletter button {
-            padding: 1.25rem 2rem;
+            padding: clamp(0.75rem, 3vw, 1.25rem) clamp(1rem, 4vw, 2rem);
             border: none;
             background: linear-gradient(135deg, var(--accent), var(--accent-hover));
             color: var(--white);
-            font-size: 0.9rem;
+            font-size: clamp(0.8rem, 2.5vw, 0.9rem);
             font-weight: 600;
             cursor: pointer;
             transition: var(--transition);
             position: relative;
             overflow: hidden;
             letter-spacing: 0.025em;
+            white-space: nowrap;
         }
 
         .rka-footer-scope .newsletter button::before {
@@ -281,8 +285,8 @@
 
         .rka-footer-scope .footer-bottom {
             border-top: 1px solid rgba(255, 255, 255, 0.1);
-            padding-top: 2.5rem;
-            margin-top: 4rem;
+            padding-top: clamp(1.5rem, 4vw, 2.5rem);
+            margin-top: clamp(2rem, 5vw, 4rem);
             text-align: center;
             position: relative;
         }
@@ -299,7 +303,7 @@
         }
 
         .rka-footer-scope .footer-bottom p {
-            font-size: 0.85rem;
+            font-size: clamp(0.75rem, 2.5vw, 0.85rem);
             color: var(--gray);
             font-weight: 300;
             margin-top: 1rem;
@@ -311,13 +315,14 @@
             font-weight: 500;
             margin-top: 1rem;
             opacity: 0.8;
+            font-size: clamp(0.8rem, 2.5vw, 0.9rem);
         }
 
         /* Enhanced Grid Layout */
         .rka-footer-scope .footer-grid {
             display: grid;
-            grid-template-columns: 2fr 1fr 1fr 1.5fr;
-            gap: 3rem;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: clamp(1.5rem, 4vw, 2.5rem);
         }
 
         /* Floating Elements Animation */
@@ -332,25 +337,25 @@
 
         /* Responsive Design */
         @media (max-width: 1024px) {
-            .rka-footer-scope .footer {
-                padding: 4rem 0 2.5rem;
-            }
             .rka-footer-scope .footer-grid {
-                grid-template-columns: 1fr 1fr;
-                gap: 2.5rem;
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: clamp(1.5rem, 3vw, 2rem);
+            }
+            .rka-footer-scope .newsletter form {
+                max-width: 100%;
             }
         }
 
         @media (max-width: 768px) {
             .rka-footer-scope .footer {
-                padding: 3rem 0 2rem;
+                padding: clamp(2rem, 5vw, 3rem) 0 clamp(1.5rem, 4vw, 2rem);
             }
             .rka-footer-scope .section-container {
-                padding: 0 1.5rem;
+                padding: 0 clamp(0.75rem, 3vw, 1.5rem);
             }
             .rka-footer-scope .footer-grid {
                 grid-template-columns: 1fr;
-                gap: 2rem;
+                gap: clamp(1.5rem, 4vw, 2rem);
                 text-align: center;
             }
             .rka-footer-scope .footer h3::after {
@@ -363,30 +368,73 @@
             .rka-footer-scope .newsletter form {
                 flex-direction: column;
                 max-width: 100%;
+                border-radius: 12px;
             }
             .rka-footer-scope .newsletter input {
                 width: 100%;
                 border-radius: 12px 12px 0 0;
+                padding: clamp(0.75rem, 3vw, 1rem);
             }
             .rka-footer-scope .newsletter button {
                 border-radius: 0 0 12px 12px;
+                padding: clamp(0.75rem, 3vw, 1rem);
+            }
+            .rka-footer-scope .footer-links a {
+                justify-content: center;
+            }
+            .rka-footer-scope .footer-links a::before {
+                display: none;
+            }
+            .rka-footer-scope .footer-links a:hover {
+                padding-left: 0;
             }
         }
 
         @media (max-width: 576px) {
             .rka-footer-scope .footer {
-                padding: 2.5rem 0 1.5rem;
+                padding: clamp(1.5rem, 5vw, 2rem) 0 clamp(1rem, 4vw, 1.5rem);
             }
             .rka-footer-scope .section-container {
-                padding: 0 1rem;
+                padding: 0 clamp(0.5rem, 2vw, 1rem);
             }
             .rka-footer-scope .footer h3 {
-                font-size: 1.3rem;
+                font-size: clamp(1.1rem, 3vw, 1.3rem);
             }
             .rka-footer-scope .social-icons a {
-                width: 44px;
-                height: 44px;
-                font-size: 1rem;
+                width: clamp(36px, 8vw, 44px);
+                height: clamp(36px, 8vw, 44px);
+                font-size: clamp(0.8rem, 2.5vw, 1rem);
+            }
+            .rka-footer-scope .newsletter input {
+                font-size: clamp(0.75rem, 2.5vw, 0.85rem);
+            }
+            .rka-footer-scope .newsletter button {
+                font-size: clamp(0.75rem, 2.5vw, 0.85rem);
+            }
+        }
+
+        @media (max-width: 360px) {
+            .rka-footer-scope .footer-grid {
+                gap: clamp(1rem, 3vw, 1.5rem);
+            }
+            .rka-footer-scope .social-icons {
+                gap: clamp(0.5rem, 2vw, 0.75rem);
+            }
+        }
+
+        /* Touch Device Optimizations */
+        @media (hover: none) {
+            .rka-footer-scope .footer a:hover,
+            .rka-footer-scope .social-icons a:hover,
+            .rka-footer-scope .newsletter button:hover {
+                transform: none;
+                box-shadow: none;
+            }
+            .rka-footer-scope .footer-links a:hover::before {
+                width: 0;
+            }
+            .rka-footer-scope .newsletter button::before {
+                display: none;
             }
         }
 
@@ -423,10 +471,10 @@
                         <p>Roshan Kumar & Associates is a premier chartered accountancy firm in Nepal, delivering expert audit, tax, risk advisory, and consulting services for sustainable growth.</p>
                         <p class="company-tagline">Your trusted partner for financial excellence.</p>
                         <div class="social-icons">
-                            <a href="{{ $footerSetting->social_links['linkedin'] ?? '#' }}" title="LinkedIn" aria-label="Follow us on LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                            <a href="{{ $footerSetting->social_links['twitter'] ?? '#' }}" title="Twitter" aria-label="Follow us on Twitter"><i class="fab fa-twitter"></i></a>
-                            <a href="{{ $footerSetting->social_links['facebook'] ?? '#' }}" title="Facebook" aria-label="Follow us on Facebook"><i class="fab fa-facebook-f"></i></a>
-                            <a href="{{ $footerSetting->social_links['instagram'] ?? '#' }}" title="Instagram" aria-label="Follow us on Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="#" title="LinkedIn" aria-label="Follow us on LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" title="Twitter" aria-label="Follow us on Twitter"><i class="fab fa-twitter"></i></a>
+                            <a href="#" title="Facebook" aria-label="Follow us on Facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" title="Instagram" aria-label="Follow us on Instagram"><i class="fab fa-instagram"></i></a>
                         </div>
                     </div>
                     
@@ -494,32 +542,39 @@
                     ease: 'power3.out',
                     scrollTrigger: {
                         trigger: '.rka-footer-scope .footer',
-                        start: 'top 80%',
+                        start: 'top 90%',
                         toggleActions: 'play none none none'
                     }
                 }
             );
 
-            // Social icons hover animation
-            gsap.set('.social-icons a', { scale: 1 });
-            
-            document.querySelectorAll('.social-icons a').forEach(icon => {
+            // Social icons interaction
+            const socialIcons = document.querySelectorAll('.social-icons a');
+            socialIcons.forEach(icon => {
                 icon.addEventListener('mouseenter', () => {
-                    gsap.to(icon, { scale: 1.1, duration: 0.3, ease: 'back.out(1.7)' });
+                    if (!window.matchMedia('(hover: none)').matches) {
+                        gsap.to(icon, { scale: 1.1, duration: 0.3, ease: 'back.out(1.7)' });
+                    }
                 });
                 
                 icon.addEventListener('mouseleave', () => {
                     gsap.to(icon, { scale: 1, duration: 0.3, ease: 'back.out(1.7)' });
                 });
+                
+                icon.addEventListener('click', () => {
+                    gsap.to(icon, { scale: 0.95, duration: 0.1, yoyo: true, repeat: 1 });
+                });
             });
 
-            // Newsletter form focus animation
+            // Newsletter form interaction
             const newsletterInput = document.querySelector('.newsletter input');
             const newsletterForm = document.querySelector('.newsletter form');
             
             if (newsletterInput && newsletterForm) {
                 newsletterInput.addEventListener('focus', () => {
-                    gsap.to(newsletterForm, { scale: 1.02, duration: 0.3 });
+                    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                        gsap.to(newsletterForm, { scale: 1.02, duration: 0.3 });
+                    }
                 });
                 
                 newsletterInput.addEventListener('blur', () => {
@@ -528,22 +583,21 @@
             }
         });
 
-        // Enhanced Newsletter Form Handler with Animation
+        // Newsletter Form Handler
         function handleNewsletterSubmit(event) {
             event.preventDefault();
             const email = event.target.querySelector('input').value;
             const button = event.target.querySelector('button');
             
-            // Button animation
-            gsap.to(button, { scale: 0.95, duration: 0.1, yoyo: true, repeat: 1 });
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                gsap.to(button, { scale: 0.95, duration: 0.1, yoyo: true, repeat: 1 });
+            }
             
-            // Success feedback
-            const originalText = button.textContent;
             button.textContent = 'Subscribed!';
             button.style.background = 'linear-gradient(135deg, #10b981, #059669)';
             
             setTimeout(() => {
-                button.textContent = originalText;
+                button.textContent = 'Subscribe';
                 button.style.background = '';
                 event.target.reset();
             }, 2000);
@@ -551,7 +605,7 @@
             console.log('Newsletter subscription:', email);
         }
 
-        // Performance optimization: Reduce motion for users who prefer it
+        // Performance optimization for reduced motion
         if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
             gsap.globalTimeline.clear();
         }

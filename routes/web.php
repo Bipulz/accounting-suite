@@ -25,8 +25,8 @@ Route::get('/industries', function () {
 })->name('industries');
 
 Route::get('/careers', function () {
-    return view('carrers');
-})->name('carrers');
+    return view('careers');
+})->name('careers');
 
 Route::get('/contact', function () {
     return view('contactus');
@@ -49,5 +49,12 @@ Route::get('/events', function () {
     return view('event');
 })->name('event');
 
+Route::get('/teams', function () {
+    return view('teams');
+})->name('teams');
+
+Route::get('/article', function () {
+    return view('article');
+});
 
 

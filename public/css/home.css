@@ -19,7 +19,7 @@
             color: var(--primary);
             line-height: 1.8;
             overflow-x: hidden;
-            width: 100vw;
+            width: 100%;
         }
 
         .rka-scope h1, .rka-scope h2, .rka-scope h3, .rka-scope h4, .rka-scope h5, .rka-scope h6 {
@@ -44,17 +44,17 @@
             background: none;
             margin-top:0rem;
             padding: 0;
-            width: 100vw;
+            width: 100%;
         }
 
         .hero-slider {
-            width: 100vw;
+            width: 100%;
             height: 100%;
         }
 
         .hero-slide {
             position: relative;
-            width: 100vw;
+            width: 100%;
             min-height: 95vh;
             background-size: cover;
             background-position: center;
@@ -194,7 +194,7 @@
             padding: 4rem 0;
             background: linear-gradient(180deg, var(--light), var(--lighter));
             position: relative;
-            width: 100vw;
+            width: 100%;
             padding-right: 5rem;
         }
 
@@ -247,7 +247,7 @@
         .services-section {
             padding: 4rem 0;
             background: var(--light);
-            width: 100vw;
+            width: 100%;
              padding-right: 5rem;
         }
 
@@ -343,7 +343,7 @@
             padding: 4rem 0;
             background: linear-gradient(180deg, var(--white), var(--lighter));
             position: relative;
-            width: 100vw;
+            width: 100%;
              padding-right: 5rem;
         }
 
@@ -437,7 +437,7 @@
         .industries-section {
             padding: 4rem 0;
             background: linear-gradient(180deg, var(--lighter), var(--white));
-            width: 100vw;
+            width: 100%;
              padding-right: 5rem;
         }
 
@@ -494,7 +494,7 @@
             padding: 4rem 0;
             text-align: center;
             position: relative;
-            width: 100vw;
+            width: 100%;
         }
 
         .cta-section::before {

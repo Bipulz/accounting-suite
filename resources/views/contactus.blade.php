@@ -20,92 +20,8 @@
                     </div>
                 </div>
             </section>
+            @include('layouts.contactusform')
 
-            <!-- Contact Section (Form and Info Side by Side) -->
-            <section class="contact-section" id="contact">
-                <div class="section-container">
-                    <h2 class="gsap-animate">Get in Touch</h2>
-                    <p class="lead gsap-animate">Ready to discuss your business needs? Fill out the form below and one of our experts will get back to you within 24 hours.</p>
-                    <div class="row g-4">
-                        <div class="col-lg-6 gsap-animate">
-                            <form class="contact-form" action="#" method="POST">
-                                @csrf
-                                <div class="row g-3">
-                                    <div class="col-md-6">
-                                        <label for="first-name" class="form-label">First Name *</label>
-                                        <input type="text" class="form-control" id="first-name" required>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <label for="last-name" class="form-label">Last Name *</label>
-                                        <input type="text" class="form-control" id="last-name" required>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <label for="email" class="form-label">Email Address *</label>
-                                        <input type="email" class="form-control" id="email" required>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <label for="phone" class="form-label">Phone Number</label>
-                                        <input type="tel" class="form-control" id="phone">
-                                    </div>
-                                    <div class="col-12">
-                                        <label for="company" class="form-label">Company/Organization</label>
-                                        <input type="text" class="form-control" id="company">
-                                    </div>
-                                    <div class="col-12">
-                                        <label for="service" class="form-label">Service of Interest</label>
-                                        <select class="form-select" id="service">
-                                            <option selected disabled>Please select a service</option>
-                                            <option value="audit">Audit & Assurance</option>
-                                            <option value="tax">Tax Advisory</option>
-                                            <option value="risk">Risk Advisory</option>
-                                            <option value="consulting">Business Consulting</option>
-                                            <option value="financial">Financial Reporting</option>
-                                            <option value="corporate">Corporate Advisory</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-12">
-                                        <label for="message" class="form-label">Message *</label>
-                                        <textarea class="form-control" id="message" rows="5" required placeholder="Please describe your requirements or questions..."></textarea>
-                                    </div>
-                                    <div class="col-12">
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" id="privacy" required>
-                                            <label class="form-check-label" for="privacy">
-                                                I agree to the processing of my personal data for the purpose of responding to my inquiry and acknowledge that I have read the <a href="#" class="text-accent">Privacy Policy</a>.
-                                            </label>
-                                        </div>
-                                    </div>
-                                    <div class="col-12 text-center">
-                                        <button type="submit" class="btn-primary-filled"><i class="fas fa-paper-plane"></i> Send Message</button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                        <div class="col-lg-6 gsap-animate" data-delay="0.2">
-                            <div class="contact-info-card mb-4">
-                                <h3>Main Office - Biratnagar</h3>
-                                <p><strong>Address:</strong> Main Road, Biratnagar-15, Morang, Nepal</p>
-                                <p><strong>Phone:</strong> <a href="tel:+97721123456" class="text-secondary">+977-21-123456</a></p>
-                                <p><strong>Email:</strong> <a href="mailto:info@charteredinsights.com" class="text-secondary">info@charteredinsights.com</a></p>
-                            </div>
-                            <div class="contact-info-card">
-                                <h3>Business Hours</h3>
-                                <ul>
-                                    <li><strong>Monday - Friday:</strong> 9:00 AM - 6:00 PM</li>
-                                    <li><strong>Saturday:</strong> 9:00 AM - 2:00 PM</li>
-                                    <li><strong>Sunday:</strong> Closed</li>
-                                </ul>
-                                <h3>Follow Us</h3>
-                                <div class="social-links">
-                                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
 
             <!-- Location Section -->
             <section class="location-section">
@@ -206,7 +122,7 @@
                 );
             });
 
-            // Recalc positions after images affect layout
+           
             ScrollTrigger.refresh();
         });
     </script>
