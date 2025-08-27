@@ -9,49 +9,49 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-
-    <link href="{{ asset('css/sidebar.css') }}" rel="stylesheet">
-
-    
+    <link rel="stylesheet" href="{{ asset('css/sidebar.css') }}">
+    @yield('styles')
+   
 </head>
 <body>
- <div class="rka-scope">
-    <div class="header">
-        <div class="header-content">
-            <div class="flex items-center space-x-3">
-                <div class="w-12 h-12 bg-white rounded-lg flex items-center justify-center logo">
-                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-                        <text x="50%" y="50%" text-anchor="middle" dominant-baseline="central" font-family="Lora, serif" font-size="24" fill="#003b5c" font-weight="bold">R</text>
-                    </svg>
+    <div class="rka-scope">
+        <div class="header">
+            <div class="header-content">
+                <div class="flex items-center space-x-3">
+                    <div class="w-12 h-12 bg-white rounded-lg flex items-center justify-center logo">
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                            <text x="50%" y="50%" text-anchor="middle" dominant-baseline="central" font-family="Lora, serif" font-size="24" fill="#003b5c" font-weight="bold">R</text>
+                        </svg>
+                    </div>
+                    <div>
+                        <h1 class="text-white font-lora font-bold text-xl">Roshan Kumar & Associates</h1>
+                        <p class="text-white/80 text-sm font-roboto">Chartered Accountants</p>
+                    </div>
                 </div>
-                <div>
-                    <h1 class="text-white font-lora font-bold text-xl">Roshan Kumar & Associates</h1>
-                    <p class="text-white/80 text-sm font-roboto">Chartered Accountants</p>
+                <div class="slogan text-white font-roboto text-sm font-medium hidden md:block">
+                    Empowering Wealth Creation -
                 </div>
-            </div>
-            <div class="slogan text-white font-roboto text-sm font-medium hidden md:block">
-                Empowering Wealth Creation -
-            </div>
-            <div class="flex items-center space-x-3">
-                <div class="search-bar">
-                    <input type="text" placeholder="Search..." oninput="handleSearch(this.value)">
-                    <i class="fas fa-search"></i>
+                <div class="flex items-center space-x-3">
+                    <div class="search-bar">
+                        <input type="text" placeholder="Search..." oninput="handleSearch(this.value)">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <i class="fas fa-search search-icon" onclick="toggleSearch()"></i>
+                    <button id="menu-btn" class="menu-btn hidden text-white hover:bg-white/10 p-2 rounded" aria-label="Toggle menu" onclick="toggleMenu()">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
                 </div>
-                <i class="fas fa-search search-icon" onclick="toggleSearch()"></i>
-                <button id="menu-btn" class="menu-btn hidden text-white hover:bg-white/10 p-2 rounded" aria-label="Toggle menu" onclick="toggleMenu()">
-                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                    </svg>
-                </button>
             </div>
         </div>
+        <div class="mobile-search" id="mobile-search">
+            <input type="text" placeholder="Search..." oninput="handleSearch(this.value)">
+        </div>
     </div>
-    <div class="mobile-search" id="mobile-search">
-        <input type="text" placeholder="Search..." oninput="handleSearch(this.value)">
-    </div>
-</div>
 
     <div class="rka-sidebar-scope">
+        <div class="overlay" id="overlay"></div>
         <div class="sidebar" id="sidebar">
             <div class="page-preview" id="page-preview">
                 <h3 id="preview-title"></h3>
@@ -87,7 +87,6 @@
                 <span>Insights</span>
             </a>
             <div class="separator-bar"></div>
-           
             <a href="/about" class="text-item" data-tooltip="About" data-image="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=300&h=120" data-description="Learn about our mission, values, and commitment to excellence. At Chartered Insights, we strive to deliver unparalleled financial and consulting services, fostering trust and driving success for our clients.">
                 <span>About</span>
             </a>
@@ -127,6 +126,7 @@
             const sidebar = document.getElementById('sidebar');
             const mainContent = document.getElementById('main-content');
             const previewPanel = document.getElementById('page-preview');
+            const overlay = document.getElementById('overlay');
             sidebar.classList.toggle('active');
             if (mainContent) {
                 mainContent.classList.toggle('active', sidebar.classList.contains('active'));
@@ -134,6 +134,12 @@
             gsap.to(sidebar, { x: sidebar.classList.contains('active') ? 0 : '-100%', duration: 0.2, ease: 'power3.out' });
             gsap.to(previewPanel, { 
                 left: sidebar.classList.contains('active') ? 480 : 80, 
+                duration: 0.2, 
+                ease: 'power3.out' 
+            });
+            gsap.to(overlay, { 
+                opacity: sidebar.classList.contains('active') ? 0 : 0, 
+                visibility: sidebar.classList.contains('active') ? 'hidden' : 'hidden',
                 duration: 0.2, 
                 ease: 'power3.out' 
             });
@@ -149,39 +155,65 @@
             const previewTitle = document.getElementById('preview-title');
             const previewImage = document.getElementById('preview-image');
             const previewDescription = document.getElementById('preview-description');
+            const overlay = document.getElementById('overlay');
             const currentPath = window.location.pathname;
+            let hoverTimeout;
 
             sidebarLinks.forEach(link => {
                 link.addEventListener('mouseenter', () => {
                     if (link.getAttribute('href') === currentPath) {
                         return;
                     }
-                    previewTitle.textContent = link.getAttribute('data-tooltip');
-                    previewImage.src = link.getAttribute('data-image');
-                    previewImage.alt = `${link.getAttribute('data-tooltip')} Preview`;
-                    previewDescription.textContent = link.getAttribute('data-description');
-                    gsap.fromTo(previewPanel,
-                        { opacity: 0, x: 20 },
-                        { 
-                            opacity: 1, 
-                            x: 0, 
-                            duration: 0.6,
-                            ease: 'power3.out',
-                            visibility: 'visible',
-                            onStart: () => previewPanel.classList.add('active')
-                        }
-                    );
+                    clearTimeout(hoverTimeout);
+                    hoverTimeout = setTimeout(() => {
+                        previewTitle.textContent = link.getAttribute('data-tooltip');
+                        previewImage.src = link.getAttribute('data-image');
+                        previewImage.alt = `${link.getAttribute('data-tooltip')} Preview`;
+                        previewDescription.textContent = link.getAttribute('data-description');
+                        gsap.killTweensOf([previewPanel, overlay]);
+                        gsap.fromTo(previewPanel,
+                            { opacity: 0, x: 30 },
+                            { 
+                                opacity: 1, 
+                                x: 0, 
+                                duration: 0.5,
+                                ease: 'power3.out',
+                                visibility: 'visible',
+                                onStart: () => previewPanel.classList.add('active')
+                            }
+                        );
+                        gsap.fromTo(overlay,
+                            { opacity: 0 },
+                            { 
+                                opacity: 1,
+                                visibility: 'visible',
+                                duration: 0.5,
+                                ease: 'power3.out',
+                                onStart: () => overlay.classList.add('active')
+                            }
+                        );
+                    }, 200);
                 });
 
                 link.addEventListener('mouseleave', () => {
-                    gsap.to(previewPanel, {
-                        opacity: 0,
-                        x: 20,
-                        duration: 0.6,
-                        ease: 'power3.in',
-                        visibility: 'hidden',
-                        onComplete: () => previewPanel.classList.remove('active')
-                    });
+                    clearTimeout(hoverTimeout);
+                    hoverTimeout = setTimeout(() => {
+                        gsap.to(previewPanel, {
+                            opacity: 0,
+                            x: 30,
+                            duration: 0.5,
+                            ease: 'power3.in',
+                            visibility: 'hidden',
+                            onComplete: () => previewPanel.classList.remove('active')
+                        });
+                        gsap.to(overlay, {
+                            opacity: 0,
+                            visibility: 'hidden',
+                            duration: 0.5,
+                            ease: 'power3.in',
+                            onComplete: () => overlay.classList.remove('active')
+                        });
+                    }, 300);
                 });
             });
         }
@@ -193,6 +225,7 @@
                 const sidebar = document.getElementById('sidebar');
                 const mainContent = document.getElementById('main-content');
                 const previewPanel = document.getElementById('page-preview');
+                const overlay = document.getElementById('overlay');
                 if (window.innerWidth > 1024) {
                     sidebar.classList.remove('active');
                     gsap.set(sidebar, { x: 0 });
