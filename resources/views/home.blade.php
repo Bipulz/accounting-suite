@@ -15,7 +15,7 @@
 
 @section('content')
     <div class="rka-scope">
-        <main>
+        <main >
             <!-- Hero Section -->
             <section class="hero-section">
                 <div class="hero-slider">
@@ -51,7 +51,7 @@
                     </div>
                 </div>
             </section>
-
+<div class="contanier">
             <!-- Key Statistics -->
             <section class="stats-section">
                 <div class="section-container">
@@ -230,6 +230,7 @@
                     </div>
                 </div>
             </section>
+            </div>
         </main>
     </div>
 
@@ -242,7 +243,7 @@
     <script>
         $(document).ready(function(){
             $('.hero-slider').slick({
-                dots: true,
+                dots: false,
                 infinite: true,
                 speed: 800,
                 fade: true,

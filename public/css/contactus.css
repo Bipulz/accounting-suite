@@ -7,11 +7,11 @@
     --white: #ffffff;
     --gray: #6c757d;
     --shadow: rgba(0, 33, 63, 0.15);
-    --transition: all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .rka-scope {
-    font-family: 'Inter', sans-serif;
+    font-family: "Inter", sans-serif;
     background: var(--light);
     color: var(--primary);
     line-height: 1.8;
@@ -24,13 +24,13 @@
     width: 100%;
 }
 
-.rka-scope h1, 
-.rka-scope h2, 
-.rka-scope h3, 
-.rka-scope h4, 
-.rka-scope h5, 
+.rka-scope h1,
+.rka-scope h2,
+.rka-scope h3,
+.rka-scope h4,
+.rka-scope h5,
 .rka-scope h6 {
-    font-family: 'Lora', serif;
+    font-family: "Lora", serif;
     font-weight: 700;
     color: var(--primary);
     letter-spacing: 0.3px;
@@ -48,9 +48,13 @@
     height: 90vh;
     min-height: 600px;
     overflow: hidden;
-    background: linear-gradient(135deg, rgba(0, 33, 63, 0.8), rgba(0, 144, 212, 0.7)),
-                url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=1920&h=1080') 
-                center/cover;
+    background: linear-gradient(
+            135deg,
+            rgba(0, 33, 63, 0.8),
+            rgba(0, 144, 212, 0.7)
+        ),
+        url("https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=1920&h=1080")
+            center/cover;
     margin: 0;
     padding: 0;
     width: 100%;
@@ -60,15 +64,18 @@
 }
 
 .hero-content {
+    position: absolute;
+    top: 40%; /*  moved even higher on the page */
+    left: 50%;
+    transform: translate(-50%, -50%);
     text-align: center;
-    max-width: 900px;
-    width: 90%;
-    padding: 3rem;
+    max-width: 90%;
+    padding: 2rem;
     color: var(--white);
-    background: rgba(0, 33, 63, 0.2);
-    backdrop-filter: blur(12px);
-    border-radius: 32px;
-    box-shadow: 0 12px 45px rgba(0, 33, 63, 0.25);
+    background: rgba(0, 33, 63, 0.15);
+    backdrop-filter: blur(8px);
+    border-radius: 24px;
+    box-shadow: 0 10px 40px rgba(0, 33, 63, 0.2);
 }
 
 .hero-content h1 {
@@ -89,9 +96,9 @@
 }
 
 /* Buttons */
-.btn-primary-filled, 
+.btn-primary-filled,
 .btn-primary-outline {
-    font-family: 'Inter', sans-serif;
+    font-family: "Inter", sans-serif;
     font-size: 1rem;
     font-weight: 600;
     padding: 1rem 2.5rem;
@@ -132,7 +139,7 @@
     box-shadow: 0 8px 20px rgba(0, 33, 63, 0.15);
 }
 
-.btn-primary-filled i, 
+.btn-primary-filled i,
 .btn-primary-outline i {
     font-size: 1rem;
     margin-left: 6px;
@@ -140,7 +147,7 @@
     color: var(--white);
 }
 
-.btn-primary-filled:hover i, 
+.btn-primary-filled:hover i,
 .btn-primary-outline:hover i {
     transform: translateX(3px);
 }
@@ -256,7 +263,7 @@
 }
 
 .reach-us-card h3::after {
-    content: '';
+    content: "";
     position: absolute;
     bottom: -2px;
     left: 50%;
@@ -344,27 +351,27 @@
     .hero-content p {
         font-size: 1.1rem;
     }
-    .btn-primary-filled, 
+    .btn-primary-filled,
     .btn-primary-outline {
         padding: 0.6rem 1.8rem;
         font-size: 0.9rem;
         max-width: 200px;
         margin: 0.4rem auto;
     }
-    .btn-primary-filled i, 
+    .btn-primary-filled i,
     .btn-primary-outline i {
         font-size: 0.9rem;
         margin-left: 5px;
     }
-    .location-section, 
+    .location-section,
     .reach-us-section {
         padding: 4rem 0;
     }
-    .location-section h2, 
+    .location-section h2,
     .reach-us-section h2 {
         font-size: 2.2rem;
     }
-    .location-section .lead, 
+    .location-section .lead,
     .reach-us-section .lead {
         font-size: 1rem;
     }
@@ -414,22 +421,22 @@
     .hero-content p {
         font-size: 0.9rem;
     }
-    .btn-primary-filled, 
+    .btn-primary-filled,
     .btn-primary-outline {
         padding: 0.5rem 1.5rem;
         font-size: 0.85rem;
         max-width: 180px;
     }
-    .btn-primary-filled i, 
+    .btn-primary-filled i,
     .btn-primary-outline i {
         font-size: 0.85rem;
         margin-left: 4px;
     }
-    .location-section h2, 
+    .location-section h2,
     .reach-us-section h2 {
         font-size: 1.8rem;
     }
-    .location-section .lead, 
+    .location-section .lead,
     .reach-us-section .lead {
         font-size: 0.9rem;
     }
@@ -479,26 +486,26 @@
     .hero-content p {
         font-size: 0.85rem;
     }
-    .btn-primary-filled, 
+    .btn-primary-filled,
     .btn-primary-outline {
         padding: 0.4rem 1.2rem;
         font-size: 0.8rem;
         max-width: 160px;
     }
-    .btn-primary-filled i, 
+    .btn-primary-filled i,
     .btn-primary-outline i {
         font-size: 0.8rem;
         margin-left: 4px;
     }
-    .location-section, 
+    .location-section,
     .reach-us-section {
         padding: 3rem 0;
     }
-    .location-section h2, 
+    .location-section h2,
     .reach-us-section h2 {
         font-size: 1.6rem;
     }
-    .location-section .lead, 
+    .location-section .lead,
     .reach-us-section .lead {
         font-size: 0.85rem;
     }

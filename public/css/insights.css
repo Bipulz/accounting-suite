@@ -11,15 +11,20 @@
 }
 
 .rka-scope {
-    font-family: 'Inter', sans-serif;
+    font-family: "Inter", sans-serif;
     background: var(--light);
     color: var(--primary);
     line-height: 1.8;
     overflow-x: hidden;
 }
 
-.rka-scope h1, .rka-scope h2, .rka-scope h3, .rka-scope h4, .rka-scope h5, .rka-scope h6 {
-    font-family: 'Lora', serif;
+.rka-scope h1,
+.rka-scope h2,
+.rka-scope h3,
+.rka-scope h4,
+.rka-scope h5,
+.rka-scope h6 {
+    font-family: "Lora", serif;
     font-weight: 700;
     color: var(--primary);
     letter-spacing: 0.3px;
@@ -55,12 +60,18 @@
 }
 
 .hero-slide-1 {
-    background: linear-gradient(135deg, rgba(0, 33, 63, 0.8), rgba(0, 144, 212, 0.7)), url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=1920&h=1080') center/cover;
+    background: linear-gradient(
+            135deg,
+            rgba(0, 33, 63, 0.8),
+            rgba(0, 144, 212, 0.7)
+        ),
+        url("https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=1920&h=1080")
+            center/cover;
 }
 
 .hero-content {
     position: absolute;
-    top: 25%;
+    top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
@@ -91,8 +102,9 @@
     opacity: 0.9;
 }
 
-.btn-primary-filled, .btn-primary-outline {
-    font-family: 'Inter', sans-serif;
+.btn-primary-filled,
+.btn-primary-outline {
+    font-family: "Inter", sans-serif;
     font-size: 1rem;
     font-weight: 600;
     padding: 0.8rem 2.5rem;
@@ -131,29 +143,34 @@
     box-shadow: 0 12px 30px rgba(0, 33, 63, 0.2);
 }
 
-.btn-primary-filled i, .btn-primary-outline i {
+.btn-primary-filled i,
+.btn-primary-outline i {
     margin-left: 8px;
     transition: transform 0.3s;
 }
 
-.btn-primary-filled:hover i, .btn-primary-outline:hover i {
+.btn-primary-filled:hover i,
+.btn-primary-outline:hover i {
     transform: translateX(4px);
 }
 
 /* Featured and Recent Articles Sections */
-.articles-section, .recent-articles-section {
+.articles-section,
+.recent-articles-section {
     padding: 7rem 0;
     margin-right: 4.8rem;
     background: linear-gradient(180deg, var(--white), var(--lighter));
 }
 
-.articles-section h2, .recent-articles-section h2 {
+.articles-section h2,
+.recent-articles-section h2 {
     font-size: 3rem;
     text-align: center;
     margin-bottom: 1.8rem;
 }
 
-.articles-section .lead, .recent-articles-section .lead {
+.articles-section .lead,
+.recent-articles-section .lead {
     font-size: 1.3rem;
     color: var(--gray);
     max-width: 1000px;
@@ -228,7 +245,11 @@
 .article-card .content-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(to top, rgba(0, 33, 63, 0.85), rgba(0, 33, 63, 0.45));
+    background: linear-gradient(
+        to top,
+        rgba(0, 33, 63, 0.85),
+        rgba(0, 33, 63, 0.45)
+    );
     opacity: 0;
     display: flex;
     flex-direction: column;
@@ -278,7 +299,7 @@
 }
 
 .btn-all {
-    font-family: 'Inter', sans-serif;
+    font-family: "Inter", sans-serif;
     font-size: 1rem;
     font-weight: 600;
     padding: 0.8rem 2rem;
@@ -336,7 +357,8 @@
     .hero-content p {
         font-size: 1.2rem;
     }
-    .articles-section h2, .recent-articles-section h2 {
+    .articles-section h2,
+    .recent-articles-section h2 {
         font-size: 2.6rem;
     }
     .article-card .image-container {
@@ -372,13 +394,16 @@
     .hero-content p {
         font-size: 1.1rem;
     }
-    .articles-section, .recent-articles-section {
+    .articles-section,
+    .recent-articles-section {
         padding: 4.5rem 0;
     }
-    .articles-section h2, .recent-articles-section h2 {
+    .articles-section h2,
+    .recent-articles-section h2 {
         font-size: 2.3rem;
     }
-    .articles-section .lead, .recent-articles-section .lead {
+    .articles-section .lead,
+    .recent-articles-section .lead {
         font-size: 1rem;
     }
     .article-card .image-container {
@@ -423,10 +448,12 @@
     .hero-content p {
         font-size: 0.95rem;
     }
-    .articles-section h2, .recent-articles-section h2 {
+    .articles-section h2,
+    .recent-articles-section h2 {
         font-size: 2rem;
     }
-    .articles-section .lead, .recent-articles-section .lead {
+    .articles-section .lead,
+    .recent-articles-section .lead {
         font-size: 0.95rem;
     }
     .article-card .image-container {
