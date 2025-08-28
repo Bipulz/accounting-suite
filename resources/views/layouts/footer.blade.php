@@ -249,17 +249,21 @@
 
         .rka-footer-scope .newsletter button {
             padding: clamp(0.75rem, 3vw, 1.25rem) clamp(1rem, 4vw, 2rem);
-            border: none;
-            background: linear-gradient(135deg, var(--accent), var(--accent-hover));
-            color: var(--white);
-            font-size: clamp(0.8rem, 2.5vw, 0.9rem);
-            font-weight: 600;
-            cursor: pointer;
-            transition: var(--transition);
-            position: relative;
-            overflow: hidden;
-            letter-spacing: 0.025em;
-            white-space: nowrap;
+    border: none;
+    background: linear-gradient(135deg, var(--accent), var(--accent-hover));
+    color: var(--white);
+    font-size: clamp(0.8rem, 2.5vw, 0.9rem);
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+    letter-spacing: 0.025em;
+    white-space: nowrap;
+
+    /* 🔥 added */
+    text-indent: -25px;  /* nudges text left (adjust px as needed) */
+    text-align: center; /* keeps overall button centered */
         }
 
         .rka-footer-scope .newsletter button::before {

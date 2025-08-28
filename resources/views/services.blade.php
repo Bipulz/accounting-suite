@@ -188,7 +188,7 @@
             </section>
 
             <!-- Industry Expertise Section -->
-            <section class="industries-section">
+            <section class="industries-section" style="margin-left:57px;">
                 <div class="section-container">
                     <h2 class="gsap-animate">Industry Expertise</h2>
                     <p class="lead gsap-animate">Specialized knowledge across key sectors, bringing industry-specific insights to every engagement.</p>
